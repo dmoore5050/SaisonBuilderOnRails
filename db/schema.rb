@@ -11,7 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611185241) do
+ActiveRecord::Schema.define(:version => 20130611224813) do
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "type_code"
+    t.integer  "yeast_code_wyeast"
+    t.integer  "yeast_code_wl"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "recipe_ingredients", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.float    "quantity"
+    t.string   "usage"
+    t.string   "duration"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.string   "name"
+    t.integer  "boil_length"
+    t.string   "primary_fermentation_temp"
+    t.string   "description"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
