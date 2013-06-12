@@ -1,14 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-require_relative '../bootstrap_ar'
-connect_to 'development'
-
 ingredient_list = [
   ['pilsner', 'Pale base malt, prominent in continental examples.', 'grain'],
   ['pale malt', 'Pale base malt, commonly used in American examples.', 'grain'],
@@ -140,10 +129,11 @@ recipe_array = [
 
 recipe_array.each do | recipe_arguments, ingredient_profiles |
   name, boil_length, ferm_temp, description = recipe_arguments
-  the_recipe = Recipe.create(name: name, boil_length: boil_length, primary_fermentation_temp: ferm_temp, description: description)
-  ingredient_profiles.each_with_object(the_recipe) do | ingredient |
+  Recipe.create(name: name, boil_length: boil_length, primary_fermentation_temp: ferm_temp, description: description)
+  ingredient_profiles.each do | ingredient |
+    the_recipe = Recipe.where(name: name).first
     ingredient_name, usage, quantity, duration = ingredient
     ingredient_match = Ingredient.where(name: ingredient_name).first
-    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient_id: ingredient_match.id)
+    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient_id: ingredient_match)
   end
 end
