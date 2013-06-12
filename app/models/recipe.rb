@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :name, :boil_length, :primary_fermentation_temp, :description
 
   validates_uniqueness_of :name, message: 'is already assigned'
   validates_presence_of :name, message: 'is required to create a new Recipe'
