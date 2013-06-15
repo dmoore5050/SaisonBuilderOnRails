@@ -1,0 +1,11 @@
+<h1 class="page_head">Ingredients List</h1>
+
+<div class='list_wrapper'>
+  <ul>
+  <% @ingredients.each_with_index do | ingredient, i | %>
+    <li><%= "#{i + 1}. #{ingredient.name.capitalize}: #{ingredient.description}" %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div id="add_ingredient_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>

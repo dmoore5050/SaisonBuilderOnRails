@@ -11,3 +11,48 @@
  *= require_self
  *= require_tree .
  */
+
+#nav_wrapper {
+  padding: 5px 20px 15px 20px;
+  border-bottom: 1px solid black;
+}
+
+.left_nav {
+  float: left;
+  padding: 0 5px;
+}
+
+.right_nav {
+  float: right;
+  padding: 0 5px;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page_head {
+  text-align: center;
+  clear: both;
+  margin-top: 30px;
+}
+
+.list_wrapper {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#add_ingredient_button {
+  height: 30px;
+  width: 110px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding-top: 6px;
+  padding-left: 10px;
+}

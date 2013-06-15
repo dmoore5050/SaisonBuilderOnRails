@@ -3,9 +3,9 @@ Sbonrails::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :recipes, :only => [:new, :index, :create, :destroy] do
-    resources :ingredients,:only => [:new, :index, :create, :destroy]
-  end
+  resources :recipes, :only => [:new, :index, :create, :destroy]
+  resources :ingredients,:only => [:new, :index, :create, :destroy]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

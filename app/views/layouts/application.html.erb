@@ -7,6 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="nav_wrapper" class="group">
+    <%= render_crumbs %>
+    <% if current_user %>
+      <span class="right_nav" ><%= current_user.email %></span>
+    <% end %>
+
+    <%= link_to "Ingredients", ingredients_path, :class => "right_nav"  %>
+
+    <% if current_user %>
+      <%= link_to "Recipes", recipes_path, :class => "right_nav" %>
+    <% end %>
+
+    <% unless current_user %>
+      <%= link_to "Log In", new_user_session_path, :class => "right_nav" %> %>
+    <% end %>
+  </div>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
