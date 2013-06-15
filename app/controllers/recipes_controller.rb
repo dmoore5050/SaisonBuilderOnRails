@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
 
+  add_crumb 'Recipes'
+
   def new
     @recipe = Recipe.new
   end

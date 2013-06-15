@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'awesome_print'
 gem 'binding_of_caller'
+gem "crummy", "~> 1.7.2"
 gem 'devise'
 gem 'jquery-rails'
 gem 'pg'
@@ -14,8 +15,8 @@ group :assets do
 end
 
 group :development do
-  gem 'pry'
   gem 'better_errors'
+  gem 'pry'
   gem 'rspec-rails'
 end
 
