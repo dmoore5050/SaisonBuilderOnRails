@@ -3,6 +3,7 @@ class IngredientsController < ApplicationController
   add_crumb 'Ingredients', '/'
 
   def new
+    add_crumb 'Add Ingredient', '/'
     @ingredient = Ingredient.new
   end
 
@@ -15,6 +16,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new params[:ingredient]
     flash[:notice] = "You have added an ingredient!"
+    redirect_to ingredients_url
   end
 
 end

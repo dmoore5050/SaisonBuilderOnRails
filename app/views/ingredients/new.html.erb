@@ -1,0 +1,17 @@
+<h1 class="page_head">Add Ingredient</h1>
+
+<div class='form_wrapper'>
+  <%= form_for @ingredient do |f| %>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name %><br>
+    <%= f.label :description, 'Description:' %>
+    <%= f.text_field :description %><br>
+    <%= f.label :type_code, 'Ingredient type:' %>
+    <%= f.text_field :type_code %><br>
+    <%= f.label :yeast_code_wl, 'White Labs Yeast Code (optional):' %>
+    <%= f.text_field :yeast_code_wl %><br>
+    <%= f.label :yeast_code_wyeast, 'Wyeast Yeast Code (optional):' %>
+    <%= f.text_field :yeast_code_wyeast %><br>
+    <%= f.submit 'Add Ingredient' %>
+  <% end %>
+</div>

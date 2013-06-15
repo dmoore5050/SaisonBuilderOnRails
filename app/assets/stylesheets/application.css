@@ -56,3 +56,8 @@ ul {
   padding-top: 6px;
   padding-left: 10px;
 }
+
+.form_wrapper {
+  width: 700px;
+  margin: 0 auto;
+}

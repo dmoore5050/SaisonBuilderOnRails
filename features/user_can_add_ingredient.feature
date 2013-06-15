@@ -1,5 +1,3 @@
-@wip
-
 Feature: User can add ingredient
   In order to expand available ingredients beyond default
   As a user
@@ -20,9 +18,9 @@ Feature: User can add ingredient
     When I go to the homepage
     And I click "Ingredients"
     And I press "Add Ingredient"
-    And I fill in "Name" for "Rhubarb"
-    And I fill in "Description" for "Tastes Rhubarby!"
-    And I fill in "Ingredient Type" for "Fruit"
+    And I fill in "Rhubarb" for "Name"
+    And I fill in "Tastes Rhubarby!" for "Description"
+    And I fill in "Fruit" for "Ingredient type"
     And I press "Add Ingredient"
     And I click "Ingredients"
     Then I should see "Rhubarb"
@@ -37,9 +35,9 @@ Feature: User can add ingredient
     And I press "Sign in"
     And I click "Ingredients"
     And I press "Add Ingredient"
-    And I fill in "Name" for "Pilsner"
-    And I fill in "Description" for "Deja vu"
-    And I fill in "Ingredient Type" for "Grain"
+    And I fill in "Pilsner" for "Name"
+    And I fill in "Deja vu" for "Description"
+    And I fill in "Grain" for "Ingredient type"
     And I press "Add Ingredient"
     Then I should see "Pilsner is already assigned."
 
@@ -53,8 +51,8 @@ Feature: User can add ingredient
     When I go to the homepage
     And I click "Ingredients"
     And I press "Add Ingredient"
-    And I fill in "Description" for "Some description"
-    And I fill in "Ingredient Type" for "Grain"
+    And I fill in "Some description" for "Description"
+    And I fill in "Grain" for "Ingredient type"
     And I press "Add Ingredient"
     Then I should see "A name is required to create a new ingredient"
 
@@ -68,11 +66,11 @@ Feature: User can add ingredient
     When I go to the homepage
     And I click "Ingredients"
     And I press "Add Ingredient"
-    And I fill in "Name" for "Lacto"
-    And I fill in "Description" for "I <3 Lacto!"
-    And I fill in "Ingredient Type" for "Yeast"
-    And I fill in "White Labs Yeast Code" for "123"
-    And I fill in "Wyeast Yeast Code" for "4567"
+    And I fill in "Lacto" for "Name"
+    And I fill in "I <3 Lacto!" for "Description"
+    And I fill in "Yeast" for "Ingredient type"
+    And I fill in "123" for "White Labs Yeast Code"
+    And I fill in "4567" for "Wyeast Yeast Code"
     And I press "Add Ingredient"
     And I click "Ingredients"
     Then I should see "Lacto"
