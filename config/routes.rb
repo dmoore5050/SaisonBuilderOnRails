@@ -1,8 +1,9 @@
 Sbonrails::Application.routes.draw do
   devise_for :users
 
-  root :to => "home#index"
+  root :to => 'home#index'
 
+  match 'home/build' => 'home#build'
   resources :recipes, :only => [:show, :new, :index, :create, :destroy]
   resources :ingredients,:only => [:new, :index, :create, :destroy]
 
