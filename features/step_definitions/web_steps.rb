@@ -2,8 +2,14 @@ Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
   User.create(email: email, password: password)
 end
 
-Given(/^the ingredient "(.*?)"$/) do |name|
-  Ingredient.create(name: name)
+Given(/^the ingredient "(.*?)", a "(.*?)"$/) do |name, type|
+  Ingredient.create(name: name, type_code: type.downcase)
+end
+
+Given(/^the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
+  recipe = Recipe.create(name: recipe_name)
+  ingredient = Ingredient.where(name: ingredient_name).first
+  recipe.recipe_ingredients.create(ingredient_id: ingredient.id, quantity: quantity)
 end
 
 When(/^I go to the homepage$/) do

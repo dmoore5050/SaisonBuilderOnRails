@@ -5,6 +5,10 @@ Feature: User can view recipe
 
   Scenario: Can View Recipe List
     Given the user "clyde@brewit.org" with password "mypassword"
+    Given the ingredient "Pilsner", a "grain"
+    Given the ingredient "Pale Malt", a "grain"
+    Given the recipe "Classic" using "9" lbs of "Pilsner"
+    Given the recipe "New World" using "8" lbs of "Pale Malt"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
@@ -12,11 +16,13 @@ Feature: User can view recipe
     And I press "Sign in"
     And I click "Recipes"
     Then I should see "Classic"
-    And I should see "New World"
+    And I should see "New world"
 
 
   Scenario: Can View Recipe
     Given the user "clyde@brewit.org" with password "mypassword"
+    Given the ingredient "Pilsner", a "Grain"
+    Given the recipe "Classic" using "9" lbs of "Pilsner"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
@@ -25,7 +31,3 @@ Feature: User can view recipe
     And I click "Recipes"
     And I click "Classic"
     Then I should see "9.0 lbs Pilsner"
-    And I should see "1.0 lb Munich"
-    And I should see "1.5 oz Styrian Goldings"
-    And I should see "1.0 oz Saaz"
-    And I should see "1.0 pkg Dupont Strain"

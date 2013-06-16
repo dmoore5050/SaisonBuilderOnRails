@@ -1,1 +1,18 @@
-Hi! Show!
+<h1 class="page_head"><%= @recipe.name.capitalize %></h1>
+
+
+<%= "Name:          #{@recipe.name.capitalize}" %><br>
+<%= "Batch size:    5 gallons" %><br>
+<%= "Mash:          75 mins @ 149F" %><br>
+<%= "Boil length:   #{@recipe.boil_length} mins" %><br>
+
+<% @ingredient_print_order.each do | type | %>
+  <% @recipe_ingredients.each_with_index do | ingredient, index | %>
+    <% ingr_record = Ingredient.where(id: ingredient.ingredient_id).first %>
+    <% if ingr_record.type_code == type %>
+      <%= ingredient.render_line_item type, ingr_record %><br>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= "Primary Fermentation Temp:  #{@recipe.primary_fermentation_temp}" %>

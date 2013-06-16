@@ -12,6 +12,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    @recipe_ingredients = @recipe.recipe_ingredients.all
+    @ingredient_print_order = %w(grain adjunct hop spice fruit botanical yeast)
   end
 
   def create

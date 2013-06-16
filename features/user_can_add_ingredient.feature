@@ -1,14 +1,12 @@
-@wip
-
 Feature: User can add ingredient
   In order to expand available ingredients beyond default
   As a user
   I want to add an ingredient
 
-  # Scenario: Unable To Add Ingredient if Not Logged In
-  #   When I go to the homepage
-  #   And I click "Ingredients"
-  #   Then I should not see "Add Ingredient"
+  Scenario: Unable To Add Ingredient if Not Logged In
+    When I go to the homepage
+    And I click "Ingredients"
+    Then I should not see "Add Ingredient"
 
   Scenario: Successful Addition
     Given the user "clyde@brewit.org" with password "mypassword"
