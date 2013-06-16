@@ -113,7 +113,7 @@ recipe_array = [
     ['pacific 6 grain', 60, '65-72F', 'Bright, clean citrus, crisp, underlying malt complexity.'],
     [
       ['pilsner', nil, 5, nil],
-      ['rye', nil, 3, nil],
+      ['rye malt', nil, 3, nil],
       ['wheat malt', nil, 1, nil],
       ['flaked oats', nil, 0.5, nil],
       ['munich', nil, 0.5, nil],
@@ -134,6 +134,6 @@ recipe_array.each do | recipe_arguments, ingredient_profiles |
     the_recipe = Recipe.where(name: name).first
     ingredient_name, usage, quantity, duration = ingredient
     ingredient_match = Ingredient.where(name: ingredient_name).first
-    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient_id: ingredient_match)
+    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient_id: ingredient_match.id)
   end
 end
