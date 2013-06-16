@@ -9,19 +9,18 @@
 <body>
   <div id="nav_wrapper" class="group">
     <%= render_crumbs %>
+
     <% if current_user %>
       <span class="right_nav" ><%= current_user.email %></span>
     <% end %>
 
+    <% unless current_user %>
+      <%= link_to "Log In", new_user_session_path, :class => "right_nav" %>
+    <% end %>
+
     <%= link_to "Ingredients", ingredients_path, :class => "right_nav"  %>
 
-    <% if current_user %>
-      <%= link_to "Recipes", recipes_path, :class => "right_nav" %>
-    <% end %>
-
-    <% unless current_user %>
-      <%= link_to "Log In", new_user_session_path, :class => "right_nav" %> %>
-    <% end %>
+    <%= link_to "Recipes", recipes_path, :class => "right_nav" %>
   </div>
 
 <p class="notice"><%= notice %></p>

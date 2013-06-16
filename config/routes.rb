@@ -3,7 +3,7 @@ Sbonrails::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :recipes, :only => [:new, :index, :create, :destroy]
+  resources :recipes, :only => [:show, :new, :index, :create, :destroy]
   resources :ingredients,:only => [:new, :index, :create, :destroy]
 
 

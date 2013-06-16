@@ -1,0 +1,11 @@
+<h1 class="page_head">Recipe List</h1>
+
+<div class='list_wrapper'>
+  <ul>
+  <% @recipes.each_with_index do | recipe, i | %>
+    <li><%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div id="add_record_button"><%= link_to "Add Recipe", new_recipe_path %></div>

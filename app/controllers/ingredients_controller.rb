@@ -15,7 +15,16 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new params[:ingredient]
-    flash[:notice] = "You have added an ingredient!"
+    @ingredient.user_id = current_user.id
+    @ingredient.save
+    flash[:notice] = "You have added an ingredient!" if Ingredient.last == @ingredient
+    redirect_to ingredients_url
+  end
+
+  def destroy
+    @ingredient = Ingredient.find params[:id]
+    @ingredient.destroy
+    flash[:notice] = 'Ingredient has been destroyed!'
     redirect_to ingredients_url
   end
 
