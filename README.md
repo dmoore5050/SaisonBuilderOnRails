@@ -22,7 +22,7 @@ Project Status
 
 ###To do:
 
-* Implement views.
+* Implement views. - WIP
 * Implement structure for Q/A format.
 * Implement deep functionality.
 
@@ -60,6 +60,7 @@ Changelog
 ---------
 
 + 2013-6-14 - Initial setup complete. Integration tests in place.
++ 2013-6-15 - Ingredients views in place. Fleshing out controllers/views.
 
 Acknowledgements
 ----------------
