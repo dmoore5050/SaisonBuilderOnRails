@@ -4,11 +4,11 @@ Feature: User can add a recipe
   I want to add a new recipe
 
   Scenario: Happy Home Path
-    Given the user "clyde@brewit.org" with password "mypw"
+    Given the user "clyde@brewit.org" with password "mypassword"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
-    And I fill in "mypw" for "Password"
+    And I fill in "mypassword" for "Password"
     And I press "Sign in"
     And I press "Build"
     And I fill in "Brown Saison" for "Name"
@@ -31,11 +31,11 @@ Feature: User can add a recipe
 
 
   Scenario: Happy Build Path
-    Given the user "clyde@brewit.org" with password "mypw"
+    Given the user "clyde@brewit.org" with password "mypassword"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
-    And I fill in "mypw" for "Password"
+    And I fill in "mypassword" for "Password"
     And I press "Sign in"
     And I click "Recipes"
     And I fill in "Brown Saison" for "Name"
@@ -55,11 +55,11 @@ Feature: User can add a recipe
     And I should see "Pretty tasty!"
 
   Scenario: Duplicate Name
-    Given the user "clyde@brewit.org" with password "mypw"
+    Given the user "clyde@brewit.org" with password "mypassword"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
-    And I fill in "mypw" for "Password"
+    And I fill in "mypassword" for "Password"
     And I press "Sign in"
     And I press "Build"
     And I fill in "Classic" for "Name"
@@ -78,11 +78,11 @@ Feature: User can add a recipe
     Then I should see "Classic is already assigned"
 
   Scenario: Duplicate Name
-    Given the user "clyde@brewit.org" with password "mypw"
+    Given the user "clyde@brewit.org" with password "mypassword"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
-    And I fill in "mypw" for "Password"
+    And I fill in "mypassword" for "Password"
     And I press "Sign in"
     And I press "Build"
     And I fill in "Pretty tasty!" for "Description"

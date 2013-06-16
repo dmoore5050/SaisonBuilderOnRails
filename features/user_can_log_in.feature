@@ -11,6 +11,8 @@ Feature: User can log in and log out
     And I fill in "password1" for "Password"
     And I press "Sign in"
     Then I should see "You are now logged in."
+    And I should see "Recipes"
+    And I should see "Ingredients"
     And I should not see "Log In"
 
   Scenario: Wrong Password
