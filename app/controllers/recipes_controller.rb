@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-  add_crumb 'Recipes'
+  add_crumb 'Recipes', '/recipes'
 
   def new
     add_crumb 'Add Recipe', '/'
