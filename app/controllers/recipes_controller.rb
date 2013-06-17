@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   add_crumb 'Recipes'
 
   def new
+    add_crumb 'Add Recipe', '/'
     @recipe = Recipe.new
   end
 
@@ -12,6 +13,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    add_crumb @recipe.name.capitalize, '/'
     @recipe_ingredients = @recipe.recipe_ingredients.all
     @ingredient_print_order = %w(grain adjunct hop spice fruit botanical yeast)
   end

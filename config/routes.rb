@@ -4,6 +4,9 @@ Sbonrails::Application.routes.draw do
   root :to => 'home#index'
 
   match 'home/build' => 'home#build'
+  match 'home/learn' => 'home#learn'
+  match 'home/style' => 'home#style'
+  match 'home/techniques' => 'home#techniques'
   resources :recipes, :only => [:show, :new, :index, :create, :destroy]
   resources :ingredients,:only => [:new, :index, :create, :destroy]
 
