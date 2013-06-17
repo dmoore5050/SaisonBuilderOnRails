@@ -7,18 +7,21 @@
       <% if ingredient.user_id.nil? %>
         <%= "#{i + 1}. #{ingredient.name.capitalize}: #{ingredient.description}" %>
       <% else %>
-      <% if current_user.id == ingredient.user_id %>
-        <%= "#{i + 1}. #{ingredient.name.capitalize}: #{ingredient.description}" %>
+        <% if current_user.id == ingredient.user_id %>
+          <span class="left">
+            <%= "#{i + 1}. #{ingredient.name.capitalize}: #{ingredient.description}" %>
+          </span>
           <%= form_for ingredient do |f| %>
             <%= button_to 'Delete', ingredients_path(ingredient), method: :delete %>
-          <% end %>
+          <% end %><br>
         <% end %>
       <% end %>
     </li>
   <% end %>
   </ul>
+
+  <% if current_user %>
+    <div id="add_record_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>
+  <% end %>
 </div>
 
-<% if current_user %>
-  <div id="add_record_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>
-<% end %>
