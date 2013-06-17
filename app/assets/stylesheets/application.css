@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+html, body {
+  height: 100%;
+}
+
 #nav_wrapper {
   padding: 5px 20px 15px 20px;
   border-bottom: 1px solid black;
@@ -22,15 +26,40 @@
   padding: 0 5px;
 }
 
+.center_nav {
+  width: 200px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -29px;
+}
+
 .right_nav {
   float: right;
   padding: 0 5px;
 }
 
-.group:after {
+.clearfix:after {
   content: "";
   display: table;
   clear: both;
+}
+
+.left_half {
+  padding-top: 120px;
+  width: 50%;
+  height: 100%;
+  float: left;
+
+}
+
+.right_half {
+  padding-top: 120px;
+  width: 49%;
+  height: 100%;
+  border-left: 1px solid black;
+  float: left;
 }
 
 ul {
@@ -50,6 +79,13 @@ ul {
   font-size: 3em;
 }
 
+.blurb {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 80px;
+}
+
 .subtitle {
   text-align: center;
   margin-top: -30px;
@@ -58,13 +94,26 @@ ul {
 
 .list_wrapper {
   width: 700px;
+  padding-bottom: 20px;
   margin: 0 auto;
+}
+
+li input {
+  float: left;
+  clear: none;
+  margin-left: 5px;
+}
+
+.left {
+  float: left;
+  clear: left;
 }
 
 #add_record_button {
   height: 30px;
   width: 110px;
   margin: 0 auto;
+  margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 5px;
   padding-top: 6px;
@@ -79,6 +128,10 @@ ul {
   border-radius: 5px;
   padding-top: 12px;
   text-align: center;
+}
+
+#build_button a {
+  text-decoration: none;
 }
 
 .form_wrapper {
