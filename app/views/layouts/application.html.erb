@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="nav_wrapper" class="group">
+  <div id="nav_wrapper" class="clearfix">
+
     <%= render_crumbs %>
+
+    <p class="notice center_nav"><%= notice %></p>
+    <p class="alert center_nav"><%= alert %></p>
 
     <% if current_user %>
       <span class="right_nav" ><%= current_user.email %></span>
@@ -23,8 +27,7 @@
     <%= link_to "Recipes", recipes_path, :class => "right_nav" %>
   </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
 
 <%= yield %>
 
