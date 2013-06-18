@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'awesome_nested_fields'
 gem 'awesome_print'
 gem 'binding_of_caller'
 gem "crummy", "~> 1.7.2"
