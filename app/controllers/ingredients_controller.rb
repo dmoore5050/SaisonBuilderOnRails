@@ -15,7 +15,7 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new params[:ingredient]
-    @ingredient.user_id = current_user.id
+    @ingredient.user = current_user
     @ingredient.save
     flash[:notice] = "You have added an ingredient!" if Ingredient.last == @ingredient
     redirect_to ingredients_url

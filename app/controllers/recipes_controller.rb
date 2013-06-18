@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new params[:recipe]
-    @ingredient.user_id = current_user.id
+    @ingredient.user = current_user
     flash[:notice] = "You have added a recipe!"
     redirect_to recipes_url
   end
