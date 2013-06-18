@@ -9,7 +9,7 @@ Sbonrails::Application.routes.draw do
   match 'home/techniques' => 'home#techniques'
   resources :recipes, :only => [:show, :new, :index, :create, :destroy]
   resources :ingredients,:only => [:new, :index, :create, :destroy]
-
+  resources :recipe_ingredients, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
