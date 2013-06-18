@@ -9,13 +9,14 @@
 <body>
   <div id="nav_wrapper" class="clearfix">
 
-    <%= render_crumbs %>
+    <span class='left_nav'><%= render_crumbs %></span>
 
     <p class="notice center_nav"><%= notice %></p>
     <p class="alert center_nav"><%= alert %></p>
 
     <% if current_user %>
       <span class="right_nav" ><%= current_user.email %></span>
+      <%= link_to "Log Out", destroy_user_session_path, :class => "right_nav", :method => :delete %>
     <% end %>
 
     <% unless current_user %>

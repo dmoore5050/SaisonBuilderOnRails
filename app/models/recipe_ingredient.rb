@@ -24,8 +24,8 @@ class RecipeIngredient < ActiveRecord::Base
   end
 
   def add_yeast_codes(record)
-    yeast_codes =  ". Mfg. code(s): White Labs WLP#{record.yeast_code_wl}"
-    yeast_codes += ", Wyeast #{record.yeast_code_wyeast}" unless record.yeast_code_wyeast.nil?
+    yeast_codes =  ". White Labs: WLP#{record.yeast_code_wl}"
+    yeast_codes += ", Wyeast: #{record.yeast_code_wyeast}" unless record.yeast_code_wyeast.nil?
     yeast_codes
   end
 

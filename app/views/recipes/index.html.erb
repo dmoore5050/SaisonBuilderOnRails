@@ -1,11 +1,30 @@
 <h1 class="page_head">Recipe List</h1>
 
-<div class='list_wrapper'>
+<div class='wrapper'>
   <ul>
   <% @recipes.each_with_index do | recipe, i | %>
-    <li><%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %></li>
+    <li>
+      <% if recipe.user_id.nil? %>
+        <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %>
+      <% else %>
+        <% if current_user.id == recipe.user_id %>
+          <span class="left">
+            <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %>
+          </span>
+          <%= form_for recipe do |f| %>
+            <%= button_to 'Delete', recipes_path(recipe), method: :delete %>
+          <% end %><br>
+        <% end %>
+      <% end %>
+    </li>
   <% end %>
   </ul>
 </div>
 
-<div id="add_record_button"><%= link_to "Add Recipe", new_recipe_path %></div>
+<% if current_user %>
+  <div class="add_record_button"><%= link_to "Add Recipe", new_recipe_path %></div>
+<% end %>
+
+<% unless current_user %>
+ <span class="center"><%= link_to "Log in", user_session_path %> to add a Recipe</span>
+<% end %>

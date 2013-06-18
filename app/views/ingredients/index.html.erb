@@ -1,6 +1,6 @@
 <h1 class="page_head">Ingredients List</h1>
 
-<div class='list_wrapper'>
+<div class='wrapper'>
   <ul>
   <% @ingredients.each_with_index do | ingredient, i | %>
     <li>
@@ -21,7 +21,11 @@
   </ul>
 
   <% if current_user %>
-    <div id="add_record_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>
+    <div class="add_record_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>
   <% end %>
 </div>
+
+<% unless current_user %>
+ <span class="center"><%= link_to "Log in", user_session_path %> to add a Recipe</span>
+<% end %>
 
