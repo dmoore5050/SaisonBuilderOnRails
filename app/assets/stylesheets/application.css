@@ -14,6 +14,7 @@
 
 html, body {
   height: 100%;
+  text-align: center;
 }
 
 #nav_wrapper {
@@ -92,10 +93,16 @@ ul {
   margin-bottom: 80px;
 }
 
-.list_wrapper {
-  width: 700px;
+.wrapper {
+  display: inline-block;
+  max-width: 700px;
+  text-align: left;
   padding-bottom: 20px;
-  margin: 0 auto;
+}
+
+.text_block {
+  text-indent: 40px;
+  display: block;
 }
 
 li input {
@@ -109,7 +116,17 @@ li input {
   clear: left;
 }
 
-#add_record_button {
+.notice {
+  margin-top: -5px;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.add_record_button {
   height: 30px;
   width: 110px;
   margin: 0 auto;
@@ -132,9 +149,4 @@ li input {
 
 #build_button a {
   text-decoration: none;
-}
-
-.form_wrapper {
-  width: 700px;
-  margin: 0 auto;
 }
