@@ -47,7 +47,7 @@ end
 
 recipe_array = [
   [
-    ['classic', 90, '85F', 'Dry, rustic, yeast-centric, light pear, unadorned.'],
+    ['classic', 90, '85F', 'Dry, rustic, yeast-centric, light pear, unadorned.', '5 gallons', '75 mins', '149F' ],
     [
       ['pilsner', nil, 9, nil],
       ['munich', nil, 1, nil],
@@ -58,7 +58,7 @@ recipe_array = [
     ]
   ],
   [
-    ['hoppy classic', 90, '85F', 'Dry, grassy, peppery, light pear, earthy.'],
+    ['hoppy classic', 90, '85F', 'Dry, grassy, peppery, light pear, earthy.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 9, nil],
       ['wheat malt', nil, 0.5, nil],
@@ -72,7 +72,7 @@ recipe_array = [
     ]
   ],
   [
-    ['rye saison', 90, '65-72F', 'Earthy malt character, restrained hops, yeast-forward.'],
+    ['rye saison', 90, '65-72F', 'Earthy malt character, restrained hops, yeast-forward.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 6, nil],
       ['rye malt', nil, 3, nil],
@@ -84,7 +84,7 @@ recipe_array = [
     ]
   ],
   [
-    ['new world', 60, '65-72F', 'Dry, bright, citrus, fruit, peppery.'],
+    ['new world', 60, '65-72F', 'Dry, bright, citrus, fruit, peppery.', '5 gallons', '75 mins', '149F'],
     [
       ['pale malt', nil, 7, nil],
       ['wheat malt', nil, 2, nil],
@@ -99,7 +99,7 @@ recipe_array = [
     ]
   ],
   [
-    ['black saison', 60, '65-72F', 'Complex malt character, mild roast, spicy yeast character.'],
+    ['black saison', 60, '65-72F', 'Complex malt character, mild roast, spicy yeast character.', '5 gallons', '75 mins', '149F'],
     [
       ['pale malt', nil, 8, nil],
       ['munich', nil, 2, nil],
@@ -110,7 +110,7 @@ recipe_array = [
     ]
   ],
   [
-    ['pacific 6 grain', 60, '65-72F', 'Bright, clean citrus, crisp, underlying malt complexity.'],
+    ['pacific 6 grain', 60, '65-72F', 'Bright, clean citrus, crisp, underlying malt complexity.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 5, nil],
       ['rye malt', nil, 3, nil],
@@ -128,12 +128,12 @@ recipe_array = [
 ]
 
 recipe_array.each do | recipe_arguments, ingredient_profiles |
-  name, boil_length, ferm_temp, description = recipe_arguments
-  Recipe.create(name: name, boil_length: boil_length, primary_fermentation_temp: ferm_temp, description: description)
+  name, boil_length, ferm_temp, description, batch_size, mash_length, mash_temp = recipe_arguments
+  Recipe.create(name: name, boil_length: boil_length, primary_fermentation_temp: ferm_temp, description: description, batch_size: batch_size, mash_length: mash_length, mash_temp: mash_temp )
   ingredient_profiles.each do | ingredient |
     the_recipe = Recipe.where(name: name).first
     ingredient_name, usage, quantity, duration = ingredient
     ingredient_match = Ingredient.where(name: ingredient_name).first
-    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient_id: ingredient_match.id)
+    the_recipe.recipe_ingredients.create(usage: usage, quantity: quantity, duration: duration, ingredient: ingredient_match)
   end
 end

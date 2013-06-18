@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(:version => 20130618013037) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "user_id"
+    t.string   "batch_size"
+    t.string   "mash_length"
+    t.string   "mash_temp"
   end
 
   create_table "users", :force => true do |t|
