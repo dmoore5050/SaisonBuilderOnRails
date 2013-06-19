@@ -20,25 +20,24 @@ Feature: User can add ingredient
     And I press "Add Ingredient"
     And I fill in "Rhubarb" for "Name"
     And I fill in "Tastes Rhubarby!" for "Description"
-    And I fill in "Fruit" for "Ingredient type"
+    And I choose "Fruit" for "Ingredient type"
     And I press "Add Ingredient"
     Then I should see "Rhubarb"
     And I should see "Tastes Rhubarby!"
 
   Scenario: Duplicate Ingredient Name
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Pilsner"
+    Given the ingredient "Pilsner", a "Grain"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
     And I fill in "mypassword" for "Password"
     And I press "Sign in"
-
     And I click "Ingredients"
     And I press "Add Ingredient"
     And I fill in "Pilsner" for "Name"
     And I fill in "Deja vu" for "Description"
-    And I fill in "Grain" for "Ingredient type"
+    And I choose "Grain" for "Ingredient type"
     And I press "Add Ingredient"
     Then I should not see "Deja vu"
 
@@ -53,6 +52,6 @@ Feature: User can add ingredient
     And I click "Ingredients"
     And I press "Add Ingredient"
     And I fill in "Some description" for "Description"
-    And I fill in "Grain" for "Ingredient type"
+    And I choose "Grain" for "Ingredient type"
     And I press "Add Ingredient"
     Then I should not see "Some description"
