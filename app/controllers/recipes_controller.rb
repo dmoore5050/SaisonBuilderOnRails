@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def new
     add_crumb 'Add Recipe', '/'
-    @recipe = Recipe.new(params[:recipe])
+    @recipe = Recipe.new params[:recipe]
     @recipe_ingredient = RecipeIngredient.new
     @ingredients = Ingredient.all
   end

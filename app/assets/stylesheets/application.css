@@ -151,7 +151,7 @@ ul {
 
 #ingredient_label {
   display: block;
-  margin-top: 39px;
+  margin-top: 20px;
 }
 
 .text_block {
@@ -216,14 +216,18 @@ li input {
 
 #usage_label {
   position: relative;
-  left: 222px;
+  left: 216px;
 }
 
 #duration_label {
   position: relative;
-  left: 331px;
+  left: 322px;
 }
 
 .usage_select {
   min-width: 147px;
+}
+
+#form_partial_wrapper {
+
 }
