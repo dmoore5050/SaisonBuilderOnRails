@@ -1,16 +1,17 @@
 class RecipeIngredient < ActiveRecord::Base
-  attr_accessible :usage, :quantity, :duration, :ingredient, :recipe
+  attr_accessible :usage, :quantity, :duration, :ingredient_id, :recipe_id
 
   belongs_to :recipe
   belongs_to :ingredient
 
+  NULL_ATTRS = %w( usage duration )
+  before_save :nil_if_blank
 
   def render_line_item(type, ingr_record)
     measure = quantity_unit type
-    usage_indicator = self.usage == 'boil' ? '@ ' : nil
     line_item = "#{self.quantity} #{measure} #{ingr_record.name.titleize}".ljust(28)
     line_item += add_usage self                     unless self.usage.nil?
-    line_item += add_duration self, usage_indicator unless self.duration.nil?
+    line_item += add_duration self unless self.duration.nil?
     line_item += add_yeast_codes ingr_record        unless ingr_record.yeast_code_wl.nil?
     line_item
   end
@@ -19,7 +20,8 @@ class RecipeIngredient < ActiveRecord::Base
     "Add during: #{ingredient.usage.capitalize}"
   end
 
-  def add_duration(ingredient, usage_indicator)
+  def add_duration(ingredient)
+    usage_indicator = self.usage == 'boil' ? '@ ' : nil
     ", #{usage_indicator}#{ingredient.duration}"
   end
 
@@ -37,6 +39,12 @@ class RecipeIngredient < ActiveRecord::Base
     when 'yeast'     then 'pkg'
     else 'lbs'
     end
+  end
+
+  protected
+
+  def nil_if_blank
+    NULL_ATTRS.each { |attr| self[attr] = nil if self[attr].blank? }
   end
 
 end
