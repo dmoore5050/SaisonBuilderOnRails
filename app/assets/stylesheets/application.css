@@ -114,6 +114,13 @@ ul {
 .wrapper {
   max-width: 900px;
   display: inline-block;
+  text-align: left;
+}
+
+.text_wrapper {
+  max-width: 700px;
+  display: inline-block;
+  text-align: left;
 }
 
 #ingredient_list {
@@ -204,10 +211,19 @@ li input {
 
 #quantity_label {
   position: relative;
-  left: 279px;
+  left: 152px;
+}
+
+#usage_label {
+  position: relative;
+  left: 222px;
 }
 
 #duration_label {
   position: relative;
-  left: 349px;
+  left: 331px;
+}
+
+.usage_select {
+  min-width: 147px;
 }

@@ -11,19 +11,19 @@
       <span id='ingredient_label'>Add Ingredient:</span>
     </div>
     <div class='recipe_fields_wrapper'>
-      <%= recipe_form.text_field :name, placeholder: "ex: My New Recipe" %><br>
-      <%= recipe_form.text_field :description, placeholder: "ex: Tastes like burning." %><br>
-      <%= recipe_form.text_field :batch_size, placeholder: "ex: 5 gallons" %><br>
-      <%= recipe_form.text_field :mash_length, placeholder: "ex: 75 mins" %>
+      <%= recipe_form.text_field :name, placeholder: "ex: My New Recipe", size: '40x20' %><br>
+      <%= recipe_form.text_field :description, placeholder: "ex: Tastes like burning.", size: '116x20' %><br>
+      <%= recipe_form.text_field :batch_size, placeholder: "ex: 5 gallons", size: '12x20' %><br>
+      <%= recipe_form.text_field :mash_length, placeholder: "ex: 75 mins", size: '12x20' %>
       <%= recipe_form.label :mash_temp, '@' %>
-      <%= recipe_form.text_field :mash_temp, placeholder: "ex: 149F" %><br>
-      <%= recipe_form.text_field :boil_length, placeholder: "ex: 90 mins" %><br><br>
+      <%= recipe_form.text_field :mash_temp, placeholder: "ex: 149F", size: '10x20' %><br>
+      <%= recipe_form.text_field :boil_length, placeholder: "ex: 90 mins", size: '12x20' %><br><br>
       <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form | %>
+      <span id="quantity_label">Quantity:</span><span id='usage_label'>Usage:</span><span id="duration_label">Duration (optional):</span><br>
 
-      <span id="quantity_label">Quantity:</span><span id="duration_label">Duration:</span><br>
-        <%= collection_select :recipe_ingredients, :ingredient_id, @ingredients, :id, :capitalized_name, { include_blank: "Ingredient:"} %>
-        <%= recipe_ingredients_form.select :usage, [['Mash-hop','Mash-hop'],['Boil', 'Boil'], ['Whirlpool', 'Whirlpool'], ['Dryhop', 'Dryhop'], ['Primary Ferm.', 'Primary Fermentation'], ['Secondary Ferm.','Secondary Fermentation']], { prompt: 'Usage' } %>
+        <%= recipe_ingredients_form.collection_select :ingredient_id, @ingredients, :id, :capitalized_name, { include_blank: "Ingredient:"} %>
         <%= recipe_ingredients_form.text_field :quantity, placeholder: 'ex: 1.5 oz, 6 lbs, etc.', size: '22x20' %>
+        <%= recipe_ingredients_form.select :usage, [['Mash-hop','Mash-hop'],['Boil', 'Boil'], ['Whirlpool', 'Whirlpool'], ['Dryhop', 'Dryhop'], ['Primary Ferm.', 'Primary Fermentation'], ['Secondary Ferm.','Secondary Fermentation']], { include_blank: '(Leave blank if grain)' }, { :class => 'usage_select' } %>
         <%= recipe_ingredients_form.text_field :duration, placeholder: 'ex: 90 mins, 6 days, etc.', size: '26x20' %>
 
       <% end %><br>
