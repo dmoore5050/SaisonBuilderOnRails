@@ -1,10 +1,11 @@
 class IngredientsController < ApplicationController
 
-  add_crumb 'Ingredients', '/'
+  add_crumb 'Ingredients', '/ingredients'
 
   def new
     add_crumb 'Add Ingredient', '/'
     @ingredient = Ingredient.new
+    @ingredients = Ingredient.all
   end
 
   def index

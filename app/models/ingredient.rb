@@ -1,5 +1,5 @@
 class Ingredient < ActiveRecord::Base
-  attr_accessible :name , :description, :type_code, :yeast_code_wyeast, :yeast_code_wl, :user
+  attr_accessible :name , :description, :type_code, :category, :yeast_code_wyeast, :yeast_code_wl, :user
 
   validates_uniqueness_of :name, message: 'is already assigned'
   validates_presence_of :name, message: 'A name is required to create a new ingredient'

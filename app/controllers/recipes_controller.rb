@@ -4,7 +4,9 @@ class RecipesController < ApplicationController
 
   def new
     add_crumb 'Add Recipe', '/'
-    @recipe = Recipe.new
+    @recipe = Recipe.new(params[:recipe])
+    @recipe_ingredient = RecipeIngredient.new
+    @ingredients = Ingredient.all
   end
 
   def index
@@ -15,12 +17,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find params[:id]
     add_crumb @recipe.name.capitalize, '/'
     @recipe_ingredients = @recipe.recipe_ingredients.all
-    @ingredient_print_order = %w(grain adjunct hop spice fruit botanical yeast)
   end
 
   def create
     @recipe = Recipe.new params[:recipe]
-    @ingredient.user = current_user
+    @recipe.user = current_user
+    @recipe.save
     flash[:notice] = "You have added a recipe!"
     redirect_to recipes_url
   end

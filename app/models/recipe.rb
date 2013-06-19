@@ -7,6 +7,7 @@ class Recipe < ActiveRecord::Base
     too_long: "length must be 20 or fewer characters"
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
+  belongs_to :user
 
   accepts_nested_attributes_for :recipe_ingredients, :ingredients, allow_destroy: true
 end
