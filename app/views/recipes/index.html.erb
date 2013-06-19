@@ -1,15 +1,21 @@
 <h1 class="page_head">Recipe List</h1>
 
-<div class='wrapper'>
+<div class='wrapper left_justify'>
   <ul>
   <% @recipes.each_with_index do | recipe, i | %>
     <li>
       <% if recipe.user_id.nil? %>
-        <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %>
+        <span class="recipe_name_block">
+          <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}:).html_safe -%>
+        </span>
+        <%= " #{recipe.description}" %>
       <% else %>
         <% if current_user.id == recipe.user_id %>
           <span class="left">
-            <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}: #{recipe.description}).html_safe %>
+            <span class="recipe_name_block">
+              <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}:).html_safe -%>
+            </span>
+            <%= " #{recipe.description}" %>
           </span>
           <%= form_for recipe do |f| %>
             <%= button_to 'Delete', recipes_path(recipe), method: :delete %>

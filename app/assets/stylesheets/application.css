@@ -93,11 +93,58 @@ ul {
   margin-bottom: 80px;
 }
 
-.wrapper {
+.left_justify {
+  text-align: left;
+}
+
+.ingredient_name_block {
+  width: 180px;
   display: inline-block;
-  max-width: 700px;
+}
+
+.recipe_name_block {
+  width: 140px;
+  display: inline-block;
+}
+
+.delete_button {
+  margin-left: 15px;
+}
+
+.wrapper {
+  max-width: 900px;
+  display: inline-block;
+}
+
+#ingredient_list {
+  margin-left: 50px;
+}
+
+.ingredient_fields_wrapper {
+  display: inline-block;
+  max-width: 800px;
   text-align: left;
   padding-bottom: 20px;
+  margin-right: 40px;
+}
+
+.labels_wrapper {
+  float: left;
+  text-align: right;
+  line-height: 1.43em;
+  margin-right: 6px;
+}
+
+.recipe_fields_wrapper {
+  display: inline-block;
+  max-width: 800px;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+#ingredient_label {
+  display: block;
+  margin-top: 39px;
 }
 
 .text_block {
@@ -126,6 +173,10 @@ li input {
   margin-bottom: 20px;
 }
 
+.top_bump {
+  margin-top: 30px!important;
+}
+
 .add_record_button {
   height: 30px;
   width: 110px;
@@ -149,4 +200,14 @@ li input {
 
 #build_button a {
   text-decoration: none;
+}
+
+#quantity_label {
+  position: relative;
+  left: 279px;
+}
+
+#duration_label {
+  position: relative;
+  left: 349px;
 }

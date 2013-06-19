@@ -2,16 +2,21 @@
 
 <div class='wrapper'>
   <%= form_for @ingredient do |f| %>
-    <%= f.label :name, 'Name:' %>
-    <%= f.text_field :name %><br>
-    <%= f.label :description, 'Description:' %>
-    <%= f.text_field :description %><br>
-    <%= f.label :type_code, 'Ingredient type:' %>
-    <%= f.text_field :type_code %><br>
-    <%= f.label :yeast_code_wl, 'White Labs Yeast Code (optional):' %>
-    <%= f.text_field :yeast_code_wl %><br>
-    <%= f.label :yeast_code_wyeast, 'Wyeast Yeast Code (optional):' %>
-    <%= f.text_field :yeast_code_wyeast %><br>
-    <%= f.submit 'Add Ingredient' %>
+    <div class='labels_wrapper clearfix'>
+      <%= f.label :name, 'Name:' %><br>
+      <%= f.label :description, 'Description:' %><br>
+      <%= f.label :batch_size, 'Ingredient type:' %><br>
+      <%= f.label :mash_length, 'White Labs Code (optional):' %><br>
+      <%= f.label :boil_length, 'Wyeast Code (optional):' %><br>
+    </div>
+    <div class='ingredient_fields_wrapper'>
+      <%= f.text_field :name, placeholder: 'Ex: My New Ingredient' %><br>
+      <%= f.text_field :description, placeholder: 'Ex: Unicorns! Rainbows!' %><br>
+      <%= f.select(:type_code, [['Grain', 1], ['Hop', 2], ['Yeast', 3], ['Spice',4], ['Fruit',5], ['Botanical', 6], ['Adjunct', 7]]) %><br>
+      <%= f.text_field :yeast_code_wl, placeholder: 'Yeast only. Ex: 654' %><br>
+      <%= f.text_field :yeast_code_wyeast, placeholder: 'Yeast only. Ex: 3724' %><br>
+    </div>
+    <%= f.submit 'Add Ingredient', :class => "add_record_button center top_bump" %>
   <% end %>
 </div>
+

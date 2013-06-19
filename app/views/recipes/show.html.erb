@@ -6,7 +6,7 @@
   <%= "Mash:          #{@recipe.mash_length} @ #{@recipe.mash_temp}" %><br>
   <%= "Boil length:   #{@recipe.boil_length} mins" %><br><br>
 
-  <% @ingredient_print_order.each do | type | %>
+  <% (1..7).each do | type | %>
     <% @recipe_ingredients.each_with_index do | ingredient, index | %>
       <% ingr_record = Ingredient.where(id: ingredient.ingredient_id).first %>
       <% if ingr_record.type_code == type %>
