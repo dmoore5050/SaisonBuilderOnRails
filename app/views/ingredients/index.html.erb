@@ -2,21 +2,32 @@
 
 <div class='wrapper left_justify'>
   <ul>
-  <% @ingredients.each_with_index do | ingredient, i | %>
-    <li id='ingredient_list'>
-      <% if ingredient.user_id.nil? %>
-        <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.titleize}:" -%></span><%= " #{ingredient.description}" %>
-      <% else %>
-        <% if current_user.id == ingredient.user_id %>
-          <span class="left">
-            <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.titlelize}:" -%></span><%= " #{ingredient.description}" %>
-          </span>
-          <%= form_for ingredient do |f| %>
-            <%= button_to 'Delete', ingredients_path(ingredient), { method: :delete, :class => "delete_button" } %>
-          <% end %><br>
-        <% end %>
+  <% (1..7).each do | type | %>
+    <% @ingredients.each do | ingredient | %>
+      <% if ingredient.type_code == type.to_s %>
+        <li id='ingredient_list'>
+          <% if ingredient.user_id.nil? %>
+            <span class="ingredient_name_block">
+              <%= "#{@i}. #{ingredient.name.titleize}:" %>
+            </span>
+            <%= " #{ingredient.description}" %>
+          <% else %>
+            <% if current_user.id == ingredient.user_id %>
+              <span class="left">
+                <span class="ingredient_name_block">
+                  <%= "#{@i}. #{ingredient.name.titleize}:" %>
+                </span>
+                <%= " #{ingredient.description}" %>
+              </span>
+              <%= form_for ingredient do |f| %>
+                <%= button_to 'Delete', ingredients_path(ingredient), { method: :delete, :class => "delete_button" } %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% @i += 1 %>
+        </li>
       <% end %>
-    </li>
+    <% end %>
   <% end %>
   </ul>
 
@@ -28,4 +39,3 @@
 <% unless current_user %>
  <span class="center"><%= link_to "Log in", user_session_path %> to add a Recipe</span>
 <% end %>
-

@@ -12,6 +12,7 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
     @recipe = Recipe.new
     @ingredient = Ingredient.new
+    @i = 1
   end
 
   def create

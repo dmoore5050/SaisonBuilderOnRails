@@ -67,6 +67,10 @@ ul {
   list-style-type: none;
 }
 
+ul li {
+  clear: left;
+}
+
 .label_block {
   display: inline-block;
   width: 198px;
