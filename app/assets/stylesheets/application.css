@@ -67,6 +67,11 @@ ul {
   list-style-type: none;
 }
 
+.label_block {
+  display: inline-block;
+  width: 198px;
+}
+
 .page_head {
   text-align: center;
   clear: both;
@@ -115,6 +120,10 @@ ul {
   max-width: 900px;
   display: inline-block;
   text-align: left;
+}
+
+.recipe_align {
+  margin-left: 200px;
 }
 
 .text_wrapper {

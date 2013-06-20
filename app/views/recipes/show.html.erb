@@ -1,20 +1,36 @@
 <h1 class="page_head"><%= @recipe.name.capitalize %></h1>
 
-<div class="wrapper">
-  <%= "Name:          #{@recipe.name.capitalize}" %><br>
-  <%= "Batch size:    #{@recipe.batch_size}" %><br>
-  <%= "Mash:          #{@recipe.mash_length} @ #{@recipe.mash_temp}" %><br>
-  <%= "Boil length:   #{@recipe.boil_length} mins" %><br><br>
+<div class="wrapper recipe_align">
+  <div class='label_block'>
+    <%= "Name:" -%>
+  </div>
+  <%= "#{@recipe.name.capitalize}" %><br>
+  <div class='label_block'>
+    <%= "Batch size:" -%>
+  </div>
+  <%="#{@recipe.batch_size}" %><br>
+  <div class='label_block'>
+    <%= "Mash:" -%>
+  </div>
+  <%="#{@recipe.mash_length} @ #{@recipe.mash_temp}" %><br>
+  <div class='label_block'>
+    <%= "Boil length:" -%>
+  </div>
+  <%="#{@recipe.boil_length} mins" %><br><br>
 
   <% (1..7).each do | type | %>
     <% @recipe_ingredients.each_with_index do | ingredient, index | %>
       <% ingr_record = Ingredient.where(id: ingredient.ingredient_id).first %>
-      <% if ingr_record.type_code == type %>
-        <%= ingredient.render_line_item type, ingr_record %><br>
+      <% if ingr_record.type_code == type.to_s %>
+        <%= ingredient.render_line_item(type.to_s, ingr_record).html_safe %><br>
       <% end %>
     <% end %>
   <% end %>
   <br>
-  <%= "Primary Fermentation Temp:  #{@recipe.primary_fermentation_temp}" %>
+
+  <div class='label_block'>
+    <%= "Primary Fermentation Temp:" -%>
+  </div>
+  <%= "#{@recipe.primary_fermentation_temp}" %>
 </div>
 
