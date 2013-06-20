@@ -6,6 +6,6 @@ Feature: User can see technique definitions
   Scenario: Successful Navigation
     When I go to the homepage
     And I click "Learn"
-    And I press "Technique Definitions"
+    And I press "Techniques"
     Then I should see "Brewing Techniques"
     And I should see "Dryhopping"

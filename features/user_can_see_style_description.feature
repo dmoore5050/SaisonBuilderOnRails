@@ -7,5 +7,5 @@ Feature: User can see style description
     When I go to the homepage
     And I click "Learn"
     And I press "Learn about Saison"
-    Then I should see "Saison: Description"
+    Then I should see "Saison: A Description"
     And I should see "Hopfenstark"

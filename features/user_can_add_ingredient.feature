@@ -27,7 +27,7 @@ Feature: User can add ingredient
 
   Scenario: Duplicate Ingredient Name
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Pilsner", a "Grain"
+    Given the ingredient "Pilsner", type code "1"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"

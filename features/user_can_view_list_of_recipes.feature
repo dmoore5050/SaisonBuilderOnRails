@@ -5,8 +5,8 @@ Feature: User can view recipe
 
   Scenario: Can View Recipe List
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Pilsner", a "grain"
-    Given the ingredient "Pale Malt", a "grain"
+    Given the ingredient "Pilsner", type code "1"
+    Given the ingredient "Pale Malt", type code "1"
     Given the recipe "Classic" using "9" lbs of "Pilsner"
     Given the recipe "New World" using "8" lbs of "Pale Malt"
     When I go to the homepage
@@ -21,7 +21,7 @@ Feature: User can view recipe
 
   Scenario: Can View Recipe
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Pilsner", a "Grain"
+    Given the ingredient "Pilsner", type code "1"
     Given the recipe "Classic" using "9" lbs of "Pilsner"
     When I go to the homepage
     And I click "Log In"

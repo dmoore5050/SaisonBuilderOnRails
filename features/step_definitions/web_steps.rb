@@ -2,8 +2,8 @@ Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
   User.create(email: email, password: password)
 end
 
-Given(/^the ingredient "(.*?)", a "(.*?)"$/) do |name, type|
-  Ingredient.create(name: name, type_code: type.downcase)
+Given(/^the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
+  Ingredient.create(name: name, type_code: type.to_i)
 end
 
 Given(/^the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|

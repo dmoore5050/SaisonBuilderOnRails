@@ -5,7 +5,7 @@ Feature: User can add a recipe
 
   Scenario: Happy Home Path
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Saaz", a "Hop"
+    Given the ingredient "Saaz", type code "2"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
@@ -30,7 +30,7 @@ Feature: User can add a recipe
 
   Scenario: Happy Build Path
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Saaz", a "Hop"
+    Given the ingredient "Saaz", type code "2"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
@@ -55,7 +55,7 @@ Feature: User can add a recipe
 
   Scenario: Duplicate Name
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Pilsner", a "Grain"
+    Given the ingredient "Pilsner", type code "1"
     Given the recipe "Brown saison" using "2" lbs of "Pilsner"
     When I go to the homepage
     And I click "Log In"
@@ -78,7 +78,7 @@ Feature: User can add a recipe
 
   Scenario: No Name Provided
     Given the user "clyde@brewit.org" with password "mypassword"
-    Given the ingredient "Saaz", a "Hop"
+    Given the ingredient "Saaz", type code "2"
     When I go to the homepage
     And I click "Log In"
     And I fill in "clyde@brewit.org" for "Email"
