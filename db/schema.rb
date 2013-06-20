@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20130618153625) do
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "type_code"
+    t.string  "type_code"
     t.integer  "yeast_code_wyeast"
     t.integer  "yeast_code_wl"
     t.datetime "created_at",        :null => false

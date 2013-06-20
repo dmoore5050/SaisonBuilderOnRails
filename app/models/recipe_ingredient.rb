@@ -35,10 +35,10 @@ class RecipeIngredient < ActiveRecord::Base
 
   def quantity_unit(type)
     case type
-    when 'spice'     then 'oz'
-    when 'hop'       then 'oz'
-    when 'botanical' then 'oz'
-    when 'yeast'     then 'pkg'
+    when '4'     then 'oz'
+    when '2'       then 'oz'
+    when '6' then 'oz'
+    when '3'     then 'pkg'
     else 'lbs'
     end
   end
