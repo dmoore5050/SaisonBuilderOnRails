@@ -1,15 +1,17 @@
 class RecipeIngredient < ActiveRecord::Base
-  attr_accessible :usage, :quantity, :duration, :ingredient_id, :recipe_id
+  attr_accessible :usage, :quantity, :duration, :ingredient, :recipe
 
   belongs_to :recipe
   belongs_to :ingredient
+
+  include Titleize
 
   NULL_ATTRS = %w( usage duration )
   before_save :nil_if_blank
 
   def render_line_item(type, ingr_record)
     measure = quantity_unit type
-    line_item = "#{self.quantity} #{measure} #{ingr_record.name.titleize}".ljust(28)
+    line_item = "<div class='label_block'>#{self.quantity} #{measure} #{ingr_record.name.titleize}</div>"
     line_item += add_usage self                     unless self.usage.nil?
     line_item += add_duration self unless self.duration.nil?
     line_item += add_yeast_codes ingr_record        unless ingr_record.yeast_code_wl.nil?

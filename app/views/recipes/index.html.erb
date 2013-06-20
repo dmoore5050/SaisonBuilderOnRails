@@ -6,14 +6,14 @@
     <li>
       <% if recipe.user_id.nil? %>
         <span class="recipe_name_block">
-          <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}:).html_safe -%>
+          <%= %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe -%>
         </span>
         <%= " #{recipe.description}" %>
       <% else %>
         <% if current_user.id == recipe.user_id %>
           <span class="left">
             <span class="recipe_name_block">
-              <%= %(#{i + 1}. #{link_to(recipe.name.capitalize, recipe_path(recipe))}:).html_safe -%>
+              <%= %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe -%>
             </span>
             <%= " #{recipe.description}" %>
           </span>

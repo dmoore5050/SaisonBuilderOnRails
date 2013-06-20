@@ -5,11 +5,11 @@
   <% @ingredients.each_with_index do | ingredient, i | %>
     <li id='ingredient_list'>
       <% if ingredient.user_id.nil? %>
-        <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.capitalize}:" -%></span><%= " #{ingredient.description}" %>
+        <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.titleize}:" -%></span><%= " #{ingredient.description}" %>
       <% else %>
         <% if current_user.id == ingredient.user_id %>
           <span class="left">
-            <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.capitalize}:" -%></span><%= " #{ingredient.description}" %>
+            <span class="ingredient_name_block"><%= "#{i + 1}. #{ingredient.name.titlelize}:" -%></span><%= " #{ingredient.description}" %>
           </span>
           <%= form_for ingredient do |f| %>
             <%= button_to 'Delete', ingredients_path(ingredient), { method: :delete, :class => "delete_button" } %>
