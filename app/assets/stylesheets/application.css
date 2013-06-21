@@ -159,12 +159,11 @@ ul li {
   display: inline-block;
   max-width: 800px;
   text-align: left;
-  padding-bottom: 20px;
 }
 
 #ingredient_label {
   display: block;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .text_block {
@@ -194,7 +193,7 @@ li input {
 }
 
 .top_bump {
-  margin-top: 30px!important;
+  margin-top: 10px!important;
 }
 
 .add_record_button {
@@ -218,6 +217,12 @@ li input {
   text-align: center;
 }
 
+.pull_right {
+  margin-left: 163px;
+  margin-bottom: -5px!important;
+  margin-top: 15px!important;
+}
+
 #build_button a {
   text-decoration: none;
 }
@@ -229,18 +234,14 @@ li input {
 
 #usage_label {
   position: relative;
-  left: 216px;
+  left: 176px;
 }
 
 #duration_label {
   position: relative;
-  left: 322px;
+  left: 281px;
 }
 
 .usage_select {
   min-width: 147px;
-}
-
-#form_partial_wrapper {
-
 }
