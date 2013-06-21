@@ -15,6 +15,22 @@
 //= require jquery.nested-fields
 //= require_tree .
 
-$(document).ready(function(e) {
-  $('FORM').nestedFields();
+
+$(document).ready(function() {
+
+  $('#add_form_line').click(function(){
+
+    var clonedForm = $('#clone_template').clone();
+    clonedForm.appendTo('#form_partial_wrapper');
+    var numItems = $('.form_clone').length;
+
+    clonedForm.find('select, input').each(function() {
+      $(this).attr('name', function(i, val){return val.replace(
+        /\d+/, function(){ return numItems; });
+      });
+      $(this).attr('id', function(i, val){return val.replace(
+        /\d+/, function(){ return numItems; });
+      });
+    });
+  });
 });

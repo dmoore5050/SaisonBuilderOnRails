@@ -9,4 +9,5 @@ class RecipeIngredientsController < ApplicationController
     @recipe_ingredient.destroy
     flash[:notice] = 'Recipe ingredient has been destroyed!'
   end
+
 end
