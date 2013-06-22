@@ -25,12 +25,15 @@ $(document).ready(function() {
     var numItems = $('.form_clone').length;
 
     clonedForm.find('select, input').each(function() {
-      $(this).attr('name', function(i, val){return val.replace(
-        /\d+/, function(){ return numItems; });
-      });
-      $(this).attr('id', function(i, val){return val.replace(
-        /\d+/, function(){ return numItems; });
-      });
+
+      $(this).attr('name', incrementValue).attr('id', incrementValue);
+
+      function incrementValue(i, val) {
+        return val.replace(/\d+/, function(){
+          return numItems;
+        });
+      }
+
     });
   });
 });
