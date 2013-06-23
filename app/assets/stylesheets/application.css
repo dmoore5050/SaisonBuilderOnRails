@@ -69,6 +69,7 @@ ul {
 
 ul li {
   clear: left;
+  height: 20px;
 }
 
 .label_block {
@@ -112,8 +113,21 @@ ul li {
 }
 
 .recipe_name_block {
-  width: 140px;
+  width: 160px;
   display: inline-block;
+}
+
+.recipe_description_block {
+  min-width: 580px;
+  display: inline-block;
+}
+
+.inline_form {
+  display: inline-block;
+}
+
+.align_right {
+  float: right;
 }
 
 .delete_button {
@@ -121,6 +135,7 @@ ul li {
 }
 
 .wrapper {
+  min-width: 700px;
   max-width: 900px;
   display: inline-block;
   text-align: left;
@@ -218,7 +233,7 @@ li input {
 }
 
 .pull_right {
-  margin-left: 163px;
+  margin-left: 160px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
 }
@@ -229,17 +244,17 @@ li input {
 
 #quantity_label {
   position: relative;
-  left: 152px;
+  left: 154px;
 }
 
 #usage_label {
   position: relative;
-  left: 176px;
+  left: 178px;
 }
 
 #duration_label {
   position: relative;
-  left: 281px;
+  left: 296px;
 }
 
 .usage_select {
