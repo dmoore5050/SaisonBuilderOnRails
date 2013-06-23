@@ -1,6 +1,9 @@
 class RecipeIngredient < ActiveRecord::Base
   attr_accessible :usage, :quantity, :duration, :ingredient, :recipe, :ingredient_id
 
+  #validates_presence_of :ingredient, message: 'This recipe ingredient has not been tied to an ingredient.'
+  #validates_presence_of :recipe, message: 'This recipe ingredient has not been tied to a recipe.'
+
   belongs_to :recipe
   belongs_to :ingredient
 
@@ -8,6 +11,10 @@ class RecipeIngredient < ActiveRecord::Base
 
   NULL_ATTRS = %w( usage duration )
   before_save :nil_if_blank
+
+  def display_usage
+    usage.titleize
+  end
 
   def render_line_item(type, ingr_record)
     measure = quantity_unit type

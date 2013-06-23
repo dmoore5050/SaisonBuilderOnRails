@@ -1,9 +1,11 @@
 class Ingredient < ActiveRecord::Base
-  attr_accessible :name , :description, :type_code, :category, :yeast_code_wyeast, :yeast_code_wl, :user_id
+  attr_accessible :name , :description, :type_code, :category, :yeast_code_wyeast, :yeast_code_wl, :user, :user_id
 
   validates_uniqueness_of :name, message: 'is already assigned'
   validates_presence_of :name, message: 'A name is required to create a new ingredient'
   validates_length_of :name, maximum: 20,
+    too_long: "length must be 20 or fewer characters"
+  validates_length_of :description, maximum: 80,
     too_long: "length must be 20 or fewer characters"
 
   has_many :recipe_ingredients, dependent: :destroy
@@ -14,8 +16,8 @@ class Ingredient < ActiveRecord::Base
 
   include Titleize
 
-  def capitalized_name
-    "#{name.capitalize}"
+  def display_name
+    name.titleize
   end
 
 end
