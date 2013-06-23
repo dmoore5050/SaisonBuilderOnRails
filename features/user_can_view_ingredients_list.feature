@@ -8,4 +8,4 @@ Feature: Users can view list of ingredients
     When I go to the homepage
     And I click "Ingredients"
     Then I should see "Ingredients List"
-    And I should see "Dupont strain"
+    And I should see "Dupont Strain"

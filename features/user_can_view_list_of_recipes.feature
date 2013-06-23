@@ -16,7 +16,7 @@ Feature: User can view recipe
     And I press "Sign in"
     And I click "Recipes"
     Then I should see "Classic"
-    And I should see "New world"
+    And I should see "New World"
 
 
   Scenario: Can View Recipe
