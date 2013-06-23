@@ -1,9 +1,6 @@
 class RecipeIngredient < ActiveRecord::Base
   attr_accessible :usage, :quantity, :duration, :ingredient, :recipe, :ingredient_id
 
-  #validates_presence_of :ingredient, message: 'This recipe ingredient has not been tied to an ingredient.'
-  #validates_presence_of :recipe, message: 'This recipe ingredient has not been tied to a recipe.'
-
   belongs_to :recipe
   belongs_to :ingredient
 
