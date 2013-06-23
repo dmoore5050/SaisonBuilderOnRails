@@ -1,0 +1,61 @@
+.main_head {
+  text-align: center;
+  clear: both;
+  margin-top: 100px!important;
+  font-size: 3em;
+}
+
+.blurb {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 80px;
+}
+
+.build_button {
+  height: 34px;
+  width: 140px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.build_button a {
+  text-decoration: none;
+}
+
+.left_half {
+  padding-top: 120px;
+  width: 50%;
+  height: 100%;
+  float: left;
+
+}
+
+.right_half {
+  padding-top: 120px;
+  width: 49%;
+  height: 100%;
+  border-left: 1px solid black;
+  float: left;
+}
+
+.text_wrapper {
+  max-width: 700px;
+  display: inline-block;
+  text-align: left;
+}
+
+
+.text_block {
+  text-indent: 40px;
+  display: block;
+}

@@ -1,13 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
  *= require_tree .
  */
@@ -20,6 +11,12 @@ html, body {
 #nav_wrapper {
   padding: 5px 20px 15px 20px;
   border-bottom: 1px solid black;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .left_nav {
@@ -36,31 +33,13 @@ html, body {
   margin-top: -29px;
 }
 
+.notice {
+  margin-top: -5px;
+}
+
 .right_nav {
   float: right;
   padding: 0 5px;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.left_half {
-  padding-top: 120px;
-  width: 50%;
-  height: 100%;
-  float: left;
-
-}
-
-.right_half {
-  padding-top: 120px;
-  width: 49%;
-  height: 100%;
-  border-left: 1px solid black;
-  float: left;
 }
 
 ul {
@@ -72,66 +51,16 @@ ul li {
   height: 20px;
 }
 
-.label_block {
-  display: inline-block;
-  width: 198px;
+li input {
+  float: left;
+  clear: none;
+  margin-left: 5px;
 }
 
 .page_head {
   text-align: center;
   clear: both;
   margin-top: 30px;
-}
-
-.main_head {
-  text-align: center;
-  clear: both;
-  margin-top: 100px;
-  font-size: 3em;
-}
-
-.blurb {
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
-  margin-bottom: 80px;
-}
-
-.subtitle {
-  text-align: center;
-  margin-top: -30px;
-  margin-bottom: 80px;
-}
-
-.left_justify {
-  text-align: left;
-}
-
-.ingredient_name_block {
-  width: 180px;
-  display: inline-block;
-}
-
-.recipe_name_block {
-  width: 160px;
-  display: inline-block;
-}
-
-.recipe_description_block {
-  min-width: 580px;
-  display: inline-block;
-}
-
-.inline_form {
-  display: inline-block;
-}
-
-.align_right {
-  float: right;
-}
-
-.delete_button {
-  margin-left: 15px;
 }
 
 .wrapper {
@@ -141,55 +70,8 @@ ul li {
   text-align: left;
 }
 
-.recipe_align {
-  margin-left: 200px;
-}
-
-.text_wrapper {
-  max-width: 700px;
-  display: inline-block;
+.left_justify {
   text-align: left;
-}
-
-#ingredient_list {
-  margin-left: 50px;
-}
-
-.ingredient_fields_wrapper {
-  display: inline-block;
-  max-width: 800px;
-  text-align: left;
-  padding-bottom: 20px;
-  margin-right: 40px;
-}
-
-.labels_wrapper {
-  float: left;
-  text-align: right;
-  line-height: 1.43em;
-  margin-right: 6px;
-}
-
-.recipe_fields_wrapper {
-  display: inline-block;
-  max-width: 800px;
-  text-align: left;
-}
-
-#ingredient_label {
-  display: block;
-  margin-top: 80px;
-}
-
-.text_block {
-  text-indent: 40px;
-  display: block;
-}
-
-li input {
-  float: left;
-  clear: none;
-  margin-left: 5px;
 }
 
 .left {
@@ -197,18 +79,10 @@ li input {
   clear: left;
 }
 
-.notice {
-  margin-top: -5px;
-}
-
 .center {
   text-align: center;
   display: block;
   margin-bottom: 20px;
-}
-
-.top_bump {
-  margin-top: 10px!important;
 }
 
 .add_record_button {
@@ -222,41 +96,13 @@ li input {
   padding-left: 10px;
 }
 
-#build_button {
-  height: 34px;
-  width: 140px;
-  margin: 0 auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding-top: 12px;
-  text-align: center;
+.labels_wrapper {
+  float: left;
+  text-align: right;
+  line-height: 1.43em;
+  margin-right: 6px;
 }
 
-.pull_right {
-  margin-left: 160px;
-  margin-bottom: -5px!important;
-  margin-top: 15px!important;
-}
-
-#build_button a {
-  text-decoration: none;
-}
-
-#quantity_label {
-  position: relative;
-  left: 154px;
-}
-
-#usage_label {
-  position: relative;
-  left: 178px;
-}
-
-#duration_label {
-  position: relative;
-  left: 296px;
-}
-
-.usage_select {
-  min-width: 147px;
+.top_bump {
+  margin-top: 10px!important;
 }

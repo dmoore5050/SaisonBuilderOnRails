@@ -1,3 +1,63 @@
-// Place all the styles related to the Recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.recipe_name_block {
+  width: 160px;
+  display: inline-block;
+}
+
+.recipe_description_block {
+  min-width: 580px;
+  display: inline-block;
+}
+
+.align_right {
+  float: right;
+}
+
+.inline_form {
+  display: inline-block;
+}
+
+.pull_right {
+  margin-left: 160px;
+  margin-bottom: -5px!important;
+  margin-top: 15px!important;
+}
+
+.label_block {
+  display: inline-block;
+  width: 198px;
+}
+
+.recipe_align {
+  margin-left: 200px;
+}
+
+#quantity_label {
+  position: relative;
+  left: 154px;
+}
+
+#usage_label {
+  position: relative;
+  left: 178px;
+}
+
+#duration_label {
+  position: relative;
+  left: 296px;
+}
+
+#ingredient_label {
+  display: block;
+  margin-top: 80px;
+}
+
+.recipe_fields_wrapper {
+  display: inline-block;
+  max-width: 800px;
+  text-align: left;
+}
+
+.usage_select {
+  min-width: 147px;
+}
+
