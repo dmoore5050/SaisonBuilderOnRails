@@ -5,9 +5,9 @@ class RecipesController < ApplicationController
   before_filter :find_recipe, only: [:show, :edit, :update, :destroy]
   before_filter :init_recipe, only: [:new, :create]
   before_filter :collect_recipe_ingredients, only: [:show, :edit]
-  before_filter :new_recipe_ingredient, only: [:new, :update]
+  before_filter :new_recipe_ingredient, only: [:new, :update, :edit]
   before_filter :all_ingredients, only: [:new, :update, :edit,]
-  before_filter :all_recipe_ingredients, only: [:new, :update]
+  before_filter :all_recipe_ingredients, only: [:new, :update, :edit]
   before_filter :usage_list, only: [:new, :update, :edit]
 
   def new
@@ -23,12 +23,12 @@ class RecipesController < ApplicationController
   end
 
   def edit
-
+    add_crumb @recipe.name.titleize, '/'
   end
 
   def update
-    add_crumb @recipe.name.titleize, '/'
     @recipe.update_attributes(params[:recipe])
+    redirect_to recipes_url
   end
 
   def create

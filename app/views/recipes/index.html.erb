@@ -12,23 +12,23 @@
           <span class='recipe_description_block'>
             <%= " #{recipe.description}" %>
             <% if current_user %>
-              <%= form_for recipe, html: { :class => 'align_right' } do |f| %>
-                <%= button_to 'Modify', edit_recipe_path(recipe) %>
+              <%= form_tag edit_recipe_path(recipe), :class => 'align_right', method: :get do %>
+                <%= submit_tag 'Modify' %>
               <% end %><br>
             <% end %>
           </span>
         </span>
       <% else %>
         <% if current_user.id == recipe.user_id %>
-          <span class="left">
-            <span class="recipe_name_block">
+          <span class='left'>
+            <span class='recipe_name_block'>
               <%= %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe -%>
             </span>
             <span class='recipe_description_block'>
               <%= " #{recipe.description}" %>
-              <%= form_for recipe, html: { :class => 'align_right' } do |f| %>
-                <%= button_to 'Modify', edit_recipe_path(recipe) %>
-              <% end %>
+              <%= form_tag edit_recipe_path(recipe), :class => 'align_right' , method: :get do %>
+                <%= submit_tag 'Modify' %>
+              <% end %><br>
             </span>
           </span>
           <%= form_for recipe, html: { :class => 'inline_form' } do |f| %>
