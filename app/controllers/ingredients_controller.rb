@@ -2,23 +2,21 @@ class IngredientsController < ApplicationController
 
   add_crumb 'Ingredients', '/ingredients'
 
+  before_filter :init_ingredient, only: [:new, :index]
+  before_filter :all_ingredients, only: [:new, :index]
+
   def new
     add_crumb 'Add Ingredient', '/'
-    @ingredient = Ingredient.new
-    @ingredients = Ingredient.all
   end
 
   def index
-    @ingredients = Ingredient.all
     @recipe = Recipe.new
-    @ingredient = Ingredient.new
     @i = 1
   end
 
   def create
     @ingredient = Ingredient.new params[:ingredient]
-    @ingredient.user = current_user
-    @ingredient.save
+    @ingredient.update_attributes(user: current_user)
     flash[:notice] = "You have added an ingredient!" if Ingredient.last == @ingredient
     redirect_to ingredients_url
   end
@@ -28,6 +26,16 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
     flash[:notice] = 'Ingredient has been destroyed!'
     redirect_to ingredients_url
+  end
+
+  private
+
+  def init_ingredient
+    @ingredient = Ingredient.new
+  end
+
+  def all_ingredients
+    @ingredients = Ingredient.all
   end
 
 end
