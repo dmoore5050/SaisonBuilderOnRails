@@ -2,59 +2,34 @@
 
 <div class='wrapper'>
   <%= form_for @recipe do | recipe_form | %>
-    <div class='labels_wrapper'>
-      <%= recipe_form.label :name, 'Name:' %><br>
-      <%= recipe_form.label :description, 'Description:' %><br>
-      <%= recipe_form.label :batch_size, 'Batch size:' %><br>
-      <%= recipe_form.label :mash_length, 'Mash:' %><br>
-      <%= recipe_form.label :boil_length, 'Boil length:' %>
-      <span id='ingredient_label'>Add Ingredient:</span>
-    </div>
-    <div class='recipe_fields_wrapper'>
-      <%= recipe_form.text_field :name, placeholder: "ex: My New Recipe", size: '30x20' %><br>
-      <%= recipe_form.text_field :description, placeholder: "ex: Tastes like burning.", size: '90x20' %><br>
-      <%= recipe_form.text_field :batch_size, placeholder: "ex: 5 gallons", size: '12x20' %><br>
-      <%= recipe_form.text_field :mash_length, placeholder: "ex: 75 mins", size: '12x20' %>
-      <%= recipe_form.label :mash_temp, '@' %>
-      <%= recipe_form.text_field :mash_temp, placeholder: "ex: 149F", size: '7x20' %><br>
-      <%= recipe_form.text_field :boil_length, placeholder: "ex: 90 mins", size: '12x20' %><br>
+
+    <%= render "recipe_form", recipe_form: recipe_form %>
+
       <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form | %>
 
         <%= button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right", id: 'add_form_line' %><br>
 
-        <span id="quantity_label">Quantity:</span>
-        <span id="usage_label">Usage:</span>
-        <span id="duration_label">Duration (optional):</span>
-
         <div id='form_partial_wrapper'>
           <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form | %>
 
-            <%= recipe_ingredients_form.label :ingredient_id, 'Ingredient:', hidden: 'true' %>
-            <%= recipe_ingredients_form.collection_select :ingredient_id, @ingredients, :id, :capitalized_name, { include_blank: "Ingredient:"}, :class => 'ingredient_select' %>
-            <%= recipe_ingredients_form.text_field :quantity, placeholder: 'ex: 1.5, 6, etc.', size: '13x20' %>
-            <%= recipe_ingredients_form.select :usage, [['Mash-hop','Mash-hop'],['Boil', 'Boil'], ['Whirlpool', 'Whirlpool'], ['Dryhop', 'Dryhop'], ['Primary Ferm.', 'Primary Fermentation'], ['Secondary Ferm.','Secondary Fermentation']], { include_blank: '(Leave blank if grain)' }, { :class => 'usage_select' } %>
-            <%= recipe_ingredients_form.text_field :duration, placeholder: 'ex: 90 mins, 6 days, etc.', size: '26x20' %>
+            <%= recipe_ingredients_form.label :quantity, 'Quantity:', :id => "quantity_label" %>
+            <%= recipe_ingredients_form.label :usage, 'Usage:', :id => "usage_label" %>
+            <%= recipe_ingredients_form.label :duration, 'Duration:', :id => "duration_label" %><br>
 
+            <%= render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form %>
           <% end %><br>
 
           <div style="display: none;">
             <span id='clone_template' class='form_clone'>
-            <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form | %>
-
-              <%= recipe_ingredients_form.label :ingredient_id, 'Ingredient:', hidden: 'true' %>
-              <%= recipe_ingredients_form.collection_select :ingredient_id, @ingredients, :id, :capitalized_name, { include_blank: "Ingredient:"}, :class => 'ingredient_select' %>
-              <%= recipe_ingredients_form.text_field :quantity, placeholder: 'ex: 1.5, 6, etc.', size: '13x20' %>
-              <%= recipe_ingredients_form.select :usage, [['Mash-hop','Mash-hop'],['Boil', 'Boil'], ['Whirlpool', 'Whirlpool'], ['Dryhop', 'Dryhop'], ['Primary Ferm.', 'Primary Fermentation'], ['Secondary Ferm.','Secondary Fermentation']], { include_blank: '(Leave blank if grain)' }, { :class => 'usage_select' } %>
-              <%= recipe_ingredients_form.text_field :duration, placeholder: 'ex: 90 mins, 6 days, etc.', size: '26x20' %>
-
-            <% end %><br>
+              <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form | %>
+                <%= render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form %>
+              <% end %><br>
             </span>
           </div>
         </div>
 
       <% end %><br>
     </div>
-    <%#= recipe_form.text_field :primary_fermentation_temp, placeholder: "ex: 75-85F", size: '12x20' %><br>
     <%= recipe_form.submit 'Add Recipe', :class => "add_record_button center top_bump" %>
   <% end %>
 </div>
