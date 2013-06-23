@@ -24,6 +24,21 @@ $(document).ready(function() {
     clonedForm.appendTo('#form_partial_wrapper');
     var numItems = $('.form_clone').length;
 
+    incrementIDs( clonedForm, numItems )
+
+  });
+
+  $('#add_update_form_line').click(function(){
+
+    var clonedForm = $('#clone_template').clone();
+    clonedForm.appendTo('#form_partial_wrapper');
+    var numItems = $('.form_count').length - 2;
+
+    incrementIDs( clonedForm, numItems )
+
+  });
+
+  function incrementIDs( clonedForm, numItems ) {
     clonedForm.find('select, input').each(function() {
 
       $(this).attr('name', incrementValue).attr('id', incrementValue);
@@ -33,7 +48,7 @@ $(document).ready(function() {
           return numItems;
         });
       }
-
     });
-  });
+  }
+
 });
