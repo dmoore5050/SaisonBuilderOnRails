@@ -8,7 +8,7 @@ ingredient_list = [
   ['honey malt', 'Specialty malt. Adds distinctive honey-like sweetness.', '1', 'grain'],
   ['chocolate malt', 'Kilned specialty malt. Adds nutty, chocolate flavor and color.', '1', 'grain'],
   ['carafa 2 special', 'Kilned specialty malt. Adds color, mild roasty flavors w/o harshness.', '1', 'grain'],
-  ['rice hulls', 'Imparts no flavor or sugar. Used to prevent stuck sparges when using wheat or rye.', '1', 'grain'],
+  ['rice hulls', 'Imparts no flavor/sugars. Used to prevent stuck sparges when using wheat or rye.', '1', 'grain'],
   ['flaked oats', 'Contributes silky mouthfeel, and mildy nutty flavor if toasted.', '1', 'grain'],
   ['amarillo', 'New-world hop, floral, tangerine citrus character.', '2', 'hop'],
   ['hallertau', 'Old-world, floral, spicy, refined.', '2', 'hop'],
@@ -92,10 +92,11 @@ recipe_array = [
       ['turbinado sugar', 'peak krausen', 1, nil],
       ['hallertau', 'boil', 1.5, '60 min'],
       ['amarillo', 'boil', 1, '10 min'],
-      ['motueka', 'boil', 1, '1 min'],
+      ['motueka', 'whirlpool', 1, '20 min'],
       ['amarillo', 'dryhop', 1, '5 days'],
       ['simcoe', 'dryhop', 1, '5 days'],
-      ['french saison', 'primary', 1, nil]
+      ['french saison', 'primary', 1, nil],
+      ['brett. clausenii', 'secondary', 1, nil]
     ]
   ],
   [
@@ -119,7 +120,7 @@ recipe_array = [
       ['munich', nil, 0.5, nil],
       ['rice hulls', nil, 0.15, nil],
       ['corn sugar', nil, 1, nil],
-      ['hallertau', 'boil', 1.25, '60 min'],
+      ['hallertau', 'first wort hop', 1.25, nil],
       ['motueka', 'boil', 1, '20 min'],
       ['motueka', 'boil', 1, '0 min'],
       ['french saison', 'primary', 1, nil],
