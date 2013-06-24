@@ -14,6 +14,7 @@ Project Status
 --------------
 
 [![Build Status](https://travis-ci.org/dmoore5050/SaisonBuilderOnRails.png)](https://travis-ci.org/dmoore5050/SaisonBuilderOnRails)
+[![Code Climate](https://codeclimate.com/github/dmoore5050/SaisonBuilderOnRails.png)](https://codeclimate.com/github/dmoore5050/SaisonBuilderOnRails)
 
 The following features are in place:
 
