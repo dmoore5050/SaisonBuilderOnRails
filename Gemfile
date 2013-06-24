@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'awesome_nested_fields'
 gem 'awesome_print'
 gem 'binding_of_caller'
+gem 'coveralls'
 gem "crummy", "~> 1.7.2"
 gem 'devise'
 gem 'jquery-rails'
@@ -25,7 +25,6 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'launchy'
   gem 'rspec-rails'
 end
 
