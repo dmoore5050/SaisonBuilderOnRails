@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130618153625) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
-    t.integer  "boil_length"
+    t.string  "boil_length"
     t.string   "primary_fermentation_temp"
     t.string   "description"
     t.datetime "created_at",                :null => false

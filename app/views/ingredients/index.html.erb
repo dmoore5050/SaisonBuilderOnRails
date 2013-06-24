@@ -7,17 +7,11 @@
       <% if ingredient.type_code == type.to_s %>
         <li id='ingredient_list'>
           <% if ingredient.user_id.nil? %>
-            <span class="ingredient_name_block">
-              <%= "#{@i}. #{ingredient.name.titleize}:" %>
-            </span>
-            <%= " #{ingredient.description}" %>
+            <%= render "print_ingredient_line", ingredient: ingredient %>
           <% else %>
             <% if current_user.id == ingredient.user_id %>
               <span class="left">
-                <span class="ingredient_name_block">
-                  <%= "#{@i}. #{ingredient.name.titleize}:" %>
-                </span>
-                <%= " #{ingredient.description}" %>
+                <%= render "print_ingredient_line", ingredient: ingredient %>
               </span>
               <%= form_for ingredient do |f| %>
                 <%= button_to 'Delete', ingredients_path(ingredient), { method: :delete, :class => "delete_button" } %>

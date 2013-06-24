@@ -16,7 +16,7 @@
   <div class='label_block'>
     <%= "Boil length:" -%>
   </div>
-  <%="#{@recipe.boil_length} mins" %><br><br>
+  <%="#{@recipe.boil_length}" %><br><br>
 
   <% (1..7).each do | type | %>
     <% @recipe_ingredients.each_with_index do | ingredient, index | %>

@@ -5,32 +5,10 @@
   <% @recipes.each_with_index do | recipe, i | %>
     <li>
       <% if recipe.user_id.nil? %>
-        <span class='left'>
-          <span class='recipe_name_block'>
-            <%= %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe -%>
-          </span>
-          <span class='recipe_description_block'>
-            <%= " #{recipe.description}" %>
-            <% if current_user %>
-              <%= form_tag edit_recipe_path(recipe), :class => 'align_right', method: :get do %>
-                <%= submit_tag 'Modify' %>
-              <% end %><br>
-            <% end %>
-          </span>
-        </span>
+        <%= render "print_recipe_line", recipe: recipe, i: i %>
       <% else %>
         <% if current_user.id == recipe.user_id %>
-          <span class='left'>
-            <span class='recipe_name_block'>
-              <%= %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe -%>
-            </span>
-            <span class='recipe_description_block'>
-              <%= " #{recipe.description}" %>
-              <%= form_tag edit_recipe_path(recipe), :class => 'align_right' , method: :get do %>
-                <%= submit_tag 'Modify' %>
-              <% end %><br>
-            </span>
-          </span>
+          <%= render "print_recipe_line", recipe: recipe, i: i %>
           <%= form_for recipe, html: { :class => 'inline_form' } do |f| %>
             <%= button_to 'Delete', recipes_path(recipe), method: :delete %>
           <% end %><br>

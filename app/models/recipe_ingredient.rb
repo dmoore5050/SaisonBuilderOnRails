@@ -39,10 +39,10 @@ class RecipeIngredient < ActiveRecord::Base
 
   def quantity_unit(type)
     case type
-    when '4'     then 'oz'
-    when '2'       then 'oz'
+    when '4' then 'oz'
+    when '2' then 'oz'
     when '6' then 'oz'
-    when '3'     then 'pkg'
+    when '3' then 'pkg'
     else 'lbs'
     end
   end
