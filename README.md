@@ -13,6 +13,8 @@ The goal of this project is to create an app to help homebrewers navigate the ne
 Project Status
 --------------
 
+[![Build Status](https://travis-ci.org/dmoore5050/SaisonBuilderOnRails.png)](https://travis-ci.org/dmoore5050/SaisonBuilderOnRails)
+
 The following features are in place:
 
 * View Technique/Style articles
