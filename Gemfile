@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'awesome_print'
 gem 'binding_of_caller'
-gem 'coveralls'
+gem 'coveralls', require: false
 gem "crummy", "~> 1.7.2"
 gem 'devise'
 gem 'jquery-rails'
