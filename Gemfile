@@ -25,6 +25,7 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'launchy'
   gem 'rspec-rails'
 end
 
