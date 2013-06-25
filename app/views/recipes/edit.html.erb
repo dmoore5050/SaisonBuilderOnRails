@@ -1,3 +1,4 @@
+
 <h1 class="page_head">Modify <%= @recipe.name.titleize %></h1>
 
 <div class='wrapper'>
@@ -14,7 +15,6 @@
         <span id="duration_label">Duration (optional):</span>
 
         <div id='form_partial_wrapper'>
-
 
             <%= recipe_form.fields_for :recipe_ingredients, @recipe_ingredients do | recipe_ingredients_form | %>
               <span class='form_count'>

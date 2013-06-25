@@ -1,5 +1,3 @@
-@wip
-
 Feature: User can modify a recipe
   In order to tweak an existing recipe to my taste
   As a user
