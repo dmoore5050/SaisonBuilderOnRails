@@ -28,9 +28,9 @@ The following features are in place:
 
 ###To do:
 
-* Implement Travis/CodeClimate/Coveralls
 * Style app
-* Explore Draper, Bourbon/Neat gems.
+* Implement delete line item in recipe edit view
+* Explore using select box to filter ingredient select in n recipe edit/new view
 
 Features
 --------
@@ -80,7 +80,8 @@ Changelog
 + 2013-6-21 - Add recipe now working.
 + 2013-6-22 - General refactoring. Implemented initial Modify Recipe view.
 + 2013-6-23 - Modify recipe finished,add'l bug fixes and refactoring.
-+ 2013-6-24 -
++ 2013-6-24 - Implemented Travis, Coveralls, CodeClimate
++ 2013-6-25 -
 
 Acknowledgements
 ----------------
