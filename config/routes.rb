@@ -9,5 +9,4 @@ Sbonrails::Application.routes.draw do
   resources :recipes
   resources :ingredients,:only => [:new, :index, :create, :destroy]
   resources :recipe_ingredients, :only => [:new, :create, :destroy]
-
 end

@@ -57,6 +57,10 @@ li input {
   margin-left: 5px;
 }
 
+form label:first-child {
+  margin-top: 4px;
+}
+
 .page_head {
   text-align: center;
   clear: both;
