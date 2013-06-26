@@ -1,11 +1,11 @@
 <div class="left_half">
-  <h1 class="page_head">About Saison</h1>
+  <h2 class="page_head">About Saison</h2>
   <p class="blurb">Learn about the style's origins, its history, and its modern character.</p>
-  <div class="build_button"><%= link_to "Learn about Saison", home_style_path %></div>
+  <%= button_to 'About Saisons', home_style_path, :class => 'add_record_button', type: 'button', method: :get %>
 </div>
 
 <div class="right_half">
-  <h1 class="page_head">Brewing Techniques</h1>
+  <h2 class="page_head">Brewing Techniques</h2>
   <p class="blurb">Learn about a few techniques used when brewing saisons.</p>
-  <div class="build_button"><%= link_to "Techniques", home_techniques_path %></div>
+  <%= button_to 'Techniques', home_techniques_path, :class => 'add_record_button', type: 'button', method: :get %>
 </div>

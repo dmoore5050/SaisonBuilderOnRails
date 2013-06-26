@@ -1,4 +1,6 @@
-<h1 class="main_head">SaisonBuilder</h1>
-<p class="subtitle">Build a saison the easy way!</p>
+<h1 class="main_head">Saison<span class='blue'>builder</span></h1>
+<p class="subtitle">Build a saison the easy way.</p>
 
-<div class="build_button"><%= link_to "Build Saison", new_recipe_path %></div>
+<%= button_to 'Build Saison', new_recipe_path, :class => 'add_record_button', type: 'button', method: :get %>
+
+

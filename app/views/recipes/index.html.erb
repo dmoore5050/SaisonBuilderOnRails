@@ -1,4 +1,4 @@
-<h1 class="page_head">Recipe List</h1>
+<h2 class="page_head">Recipe List</h2>
 
 <div class='wrapper left_justify'>
   <ul>
@@ -22,7 +22,7 @@
 </div>
 
 <% if current_user %>
-  <div class="add_record_button"><%= link_to "Add Recipe", new_recipe_path %></div>
+  <%= button_to 'Add Recipe', new_recipe_path, :class => 'add_record_button', type: 'button', method: :get %>
 <% end %>
 
 <% unless current_user %>

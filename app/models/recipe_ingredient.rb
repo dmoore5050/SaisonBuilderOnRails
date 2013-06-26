@@ -38,11 +38,8 @@ class RecipeIngredient < ActiveRecord::Base
   end
 
   def quantity_unit(type)
-    case type
-    when '4' then 'oz'
-    when '2' then 'oz'
-    when '6' then 'oz'
-    when '3' then 'pkg'
+    if ['2', '4', '6'].include? type then 'oz'
+    elsif type == '3' then 'pkg'
     else 'lbs'
     end
   end

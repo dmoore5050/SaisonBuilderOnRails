@@ -3,6 +3,15 @@
   display: inline-block;
 }
 
+.recipe_name_block a {
+  text-decoration: none;
+  color: #1d2951;
+}
+
+.recipe_name_block a:hover {
+  text-decoration: underline;
+}
+
 .recipe_description_block {
   min-width: 580px;
   display: inline-block;
@@ -17,9 +26,20 @@
 }
 
 .pull_right {
-  margin-left: 160px;
+  margin-left: 144px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
+}
+
+#add_form_line, #add_update_form_line {
+  height: 30px;
+  background-color: lightgray;
+  color: #1d2951;
+}
+
+#add_form_line:hover, #add_update_form_line:hover {
+  color: black;
+  cursor: pointer;
 }
 
 .label_block {
@@ -33,22 +53,22 @@
 
 #quantity_label {
   position: relative;
-  left: 154px;
+  left: 152px;
 }
 
 #usage_label {
   position: relative;
-  left: 178px;
+  left: 174px;
 }
 
 #duration_label {
   position: relative;
-  left: 296px;
+  left: 273px;
 }
 
 #ingredient_label {
   display: block;
-  margin-top: 80px;
+  margin-top: 92px;
 }
 
 .hidden_label {

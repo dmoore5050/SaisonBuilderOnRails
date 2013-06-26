@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sbonrails</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title>SaisonBuilder on Rails</title>
+  <%= stylesheet_link_tag    'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Titillium:400' rel='stylesheet' type='text/css'
 </head>
 <body>
-  <div id="nav_wrapper" class="clearfix">
+  <div id='nav_wrapper' class='clearfix'>
 
-    <span class='left_nav'><%= render_crumbs %></span>
+    <span class='left_nav nav_text'><%= render_crumbs %></span>
 
-    <p class="notice center_nav"><%= notice %></p>
-    <p class="alert center_nav"><%= alert %></p>
+    <p class='notice center_nav'><%= notice %></p>
+    <p class='alert center_nav'><%= alert %></p>
 
     <% if current_user %>
-      <span class="right_nav" ><%= current_user.email %></span>
-      <%= link_to "Log Out", destroy_user_session_path, :class => "right_nav", :method => :delete %>
+      <span id='email' class='right_nav nav_text' ><%= current_user.email %></span>
+      <%= link_to 'log out', destroy_user_session_path, :class => 'right_nav nav_button', :method => :delete %>
     <% end %>
 
     <% unless current_user %>
-      <%= link_to "Log In", new_user_session_path, :class => "right_nav" %>
+      <%= link_to 'log in', new_user_session_path, :class => 'right_nav nav_button' %>
     <% end %>
 
-    <%= link_to "Ingredients", ingredients_path, :class => "right_nav"  %>
+    <%= link_to 'ingredients', ingredients_path, :class => 'right_nav nav_button'  %>
 
-    <%= link_to "Recipes", recipes_path, :class => "right_nav" %>
+    <%= link_to 'recipes', recipes_path, :class => 'right_nav nav_button' %>
 
-    <%= link_to "Learn", home_learn_path, :class => "right_nav" %>
+    <%= link_to 'learn', home_learn_path, :class => 'right_nav nav_button' %>
   </div>
 
 

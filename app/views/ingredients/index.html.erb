@@ -1,4 +1,4 @@
-<h1 class="page_head">Ingredients List</h1>
+<h2 class="page_head">Ingredients List</h2>
 
 <div class='wrapper left_justify'>
   <ul>
@@ -24,11 +24,11 @@
     <% end %>
   <% end %>
   </ul>
-
-  <% if current_user %>
-    <div class="add_record_button"><%= link_to "Add Ingredient", new_ingredient_path %></div>
-  <% end %>
 </div>
+
+<% if current_user %>
+  <%= button_to 'Add Ingredient', new_ingredient_path, :class => 'add_record_button', type: 'button', method: :get %>
+<% end %>
 
 <% unless current_user %>
  <span class="center"><%= link_to "Log in", user_session_path %> to add a Recipe</span>
