@@ -14,8 +14,6 @@ class Ingredient < ActiveRecord::Base
 
   accepts_nested_attributes_for :recipe_ingredients, :recipes, allow_destroy: true
 
-  include Titleize
-
   def display_name
     name.titleize
   end

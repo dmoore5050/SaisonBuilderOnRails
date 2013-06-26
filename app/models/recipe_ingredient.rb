@@ -4,8 +4,6 @@ class RecipeIngredient < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :ingredient
 
-  include Titleize
-
   NULL_ATTRS = %w( usage duration )
   before_save :nil_if_blank
 

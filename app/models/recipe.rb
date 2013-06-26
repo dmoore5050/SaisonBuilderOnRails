@@ -18,6 +18,4 @@ class Recipe < ActiveRecord::Base
     attributed['ingredient_id'].blank?
   end
 
-  include Titleize
-
 end
