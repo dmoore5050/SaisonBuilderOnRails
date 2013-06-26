@@ -9,11 +9,11 @@ Scenario: Can Remove Recipe
   Given the recipe "Classic" using "9" lbs of "Pilsner"
   Given the recipe "New World" using "8" lbs of "Pilsner"
   When I go to the homepage
-  And I click "Log In"
+  And I click "log in"
   And I fill in "clyde@brewit.org" for "Email"
   And I fill in "mypassword" for "Password"
   And I press "Sign in"
-  And I click "Recipes"
+  And I click "recipes"
   And I find and press the first "Delete"
   Then I should not see "Classic"
   And I should see "New World"

@@ -5,7 +5,7 @@ Feature: User can see style description
 
   Scenario: Successful Navigation
     When I go to the homepage
-    And I click "Learn"
-    And I press "Learn about Saison"
+    And I click "learn"
+    And I press "About Saisons"
     Then I should see "Saison: A Description"
     And I should see "Hopfenstark"

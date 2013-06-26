@@ -1,8 +1,9 @@
 
 <h2 class="page_head">Modify <%= @recipe.name.titleize %></h2>
 
-<div class='wrapper'>
-  <%= form_for @recipe do | recipe_form | %>
+
+<%= form_for @recipe do | recipe_form | %>
+  <div class='wrapper'>
 
     <%= render "recipe_form", recipe_form: recipe_form %>
 

@@ -8,11 +8,11 @@ Feature: User can modify a recipe
     Given the ingredient "Pilsner", type code "1"
     Given the recipe "Classic" using "9" lbs of "Pilsner"
     When I go to the homepage
-    And I click "Log In"
+    And I click "log in"
     And I fill in "clyde@brewit.org" for "Email"
     And I fill in "mypassword" for "Password"
     And I press "Sign in"
-    And I click "Recipes"
+    And I click "recipes"
     And I press "Modify"
     And I fill in "new classic" for "Name"
     And I press "Save Recipe"

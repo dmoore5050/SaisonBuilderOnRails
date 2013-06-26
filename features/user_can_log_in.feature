@@ -6,19 +6,19 @@ Feature: User can log in and log out
   Scenario: Happy Path
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Log In"
+    And I click "log in"
     And I fill in "bob@example.com" for "Email"
     And I fill in "password1" for "Password"
     And I press "Sign in"
     Then I should see "You are now logged in."
-    And I should see "Recipes"
-    And I should see "Ingredients"
-    And I should not see "Log In"
+    And I should see "recipes"
+    And I should see "ingredients"
+    And I should not see "log in"
 
   Scenario: Wrong Password
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Log In"
+    And I click "log in"
     And I fill in "bob@example.com" for "Email"
     And I fill in "wrong password" for "Password"
     And I press "Sign in"
@@ -27,7 +27,7 @@ Feature: User can log in and log out
   Scenario: Wrong Username
     Given the user "bob@example.com" with password "password1"
     When I go to the homepage
-    And I click "Log In"
+    And I click "log in"
     And I fill in "betty@example.com" for "Email"
     And I fill in "password1" for "Password"
     And I press "Sign in"

@@ -6,6 +6,6 @@ Feature: Users can view list of ingredients
   Scenario: Successful Navigation
     Given the ingredient "Dupont Strain", type code "3"
     When I go to the homepage
-    And I click "Ingredients"
+    And I click "ingredients"
     Then I should see "Ingredients List"
     And I should see "Dupont Strain"

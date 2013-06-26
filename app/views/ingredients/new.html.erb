@@ -1,7 +1,8 @@
 <h2 class="page_head">Add Ingredient</h2>
 
-<div class='wrapper'>
-  <%= form_for @ingredient do |f| %>
+
+<%= form_for @ingredient do |f| %>
+  <div class='wrapper'>
     <div class='labels_wrapper clearfix'>
       <%= f.label :type_code, 'Ingredient type:' %><br>
       <%= f.label :name, 'Name:' %><br>
