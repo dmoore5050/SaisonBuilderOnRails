@@ -1,0 +1,27 @@
+%h2.page_head= @recipe.name.capitalize
+
+.wrapper
+  .label_block.recipe_align= "Name:"
+  = "#{@recipe.name.capitalize}"
+  %br/
+  .label_block.recipe_align= "Batch size:"
+  = "#{@recipe.batch_size}"
+  %br/
+  .label_block.recipe_align= "Mash:"
+  = "#{@recipe.mash_length} @ #{@recipe.mash_temp}"
+  %br/
+  .label_block.recipe_align= "Boil length:"
+  = "#{@recipe.boil_length}"
+  %br/
+  %br/
+
+  - (1..7).each do | type |
+    - @recipe_ingredients.each_with_index do | ingredient, index |
+      - ingr_record = Ingredient.where(id: ingredient.ingredient_id).first
+      - if ingr_record.type_code == type.to_s
+        = ingredient.render_line_item(type.to_s, ingr_record).html_safe
+        %br/
+  %br/
+
+  .recipe_align= "Primary Fermentation Temp:      #{@recipe.primary_fermentation_temp}"
+

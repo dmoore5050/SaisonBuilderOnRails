@@ -1,4 +1,4 @@
-#ingredient_list {
+.ingredient_list {
   margin-left: 20px;
 }
 
@@ -17,4 +17,12 @@
   text-align: left;
   padding-bottom: 20px;
   margin-right: 40px;
+}
+
+#ingredient_labels_wrapper {
+  float: left;
+  text-align: right;
+  line-height: 1.43em;
+  margin-right: 6px;
+  margin-left: 20%!important;
 }

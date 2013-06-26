@@ -110,6 +110,12 @@ ul {
 ul li {
   clear: left;
   height: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-top: 1px;
+}
+
+ul li:last-child {
+  border-bottom: 0;
 }
 
 li input {

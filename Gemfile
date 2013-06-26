@@ -5,6 +5,7 @@ gem 'binding_of_caller'
 gem 'coveralls', require: false
 gem "crummy", "~> 1.7.2"
 gem 'devise'
+gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.13'

@@ -13,7 +13,7 @@ class RecipeIngredient < ActiveRecord::Base
 
   def render_line_item(type, ingr_record)
     measure = quantity_unit type
-    line_item = "<div class='label_block'>#{self.quantity} #{measure} #{ingr_record.name.titleize}</div>"
+    line_item = "<div class='label_block recipe_align'>#{self.quantity} #{measure} #{ingr_record.name.titleize}</div>"
     line_item += add_usage self                     unless self.usage.nil?
     line_item += add_duration self unless self.duration.nil?
     line_item += add_yeast_codes ingr_record        unless ingr_record.yeast_code_wl.nil?
@@ -30,8 +30,8 @@ class RecipeIngredient < ActiveRecord::Base
   end
 
   def add_yeast_codes(record)
-    yeast_codes =  ". White Labs: WLP#{record.yeast_code_wl}"
-    yeast_codes += ", Wyeast: #{record.yeast_code_wyeast}" unless record.yeast_code_wyeast.nil?
+    yeast_codes =  ". WL: WLP#{record.yeast_code_wl}"
+    yeast_codes += ", Wy: #{record.yeast_code_wyeast}" unless record.yeast_code_wyeast.nil?
     yeast_codes
   end
 

@@ -97,7 +97,7 @@ Feature: User can add a recipe
     And I click "New Saison"
     Then I should see "New Saison"
     And I should see "1.0 pkg Dupont Strain"
-    And I should see "Add during: Primary. White Labs: WLP565, Wyeast: 3724"
+    And I should see "Add during: Primary. WL: WLP565, Wy: 3724"
 
   Scenario: Duplicate Name
     Given the user "clyde@brewit.org" with password "mypassword"

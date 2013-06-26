@@ -28,7 +28,6 @@ The following features are in place:
 
 ###To do:
 
-* Style app
 * Implement delete line item in recipe edit view
 * Explore using select box to filter ingredient select in n recipe edit/new view
 

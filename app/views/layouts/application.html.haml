@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %titleSaisonBuilder on Rails
+    = stylesheet_link_tag    'application', :media => 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    <link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium:400' rel='stylesheet' type='text/css'>
+
+  %body
+    #nav_wrapper.clearfix
+
+      %span.left_nav.nav_text= render_crumbs
+
+      %p.notice.center_nav= notice
+      %p.alert.center_nav= alert
+
+      - if current_user
+        %span#email.right_nav.nav_text= current_user.email
+        = link_to 'log out', destroy_user_session_path, :class => 'right_nav nav_button', :method => :delete
+
+      - unless current_user
+        = link_to 'log in', new_user_session_path, :class => 'right_nav nav_button'
+
+      = link_to 'ingredients', ingredients_path, :class => 'right_nav nav_button'
+
+      = link_to 'recipes', recipes_path, :class => 'right_nav nav_button'
+
+      = link_to 'learn', home_learn_path, :class => 'right_nav nav_button'
+
+  = yield
