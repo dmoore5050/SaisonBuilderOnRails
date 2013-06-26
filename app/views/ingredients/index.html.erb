@@ -14,7 +14,7 @@
                 <%= render "print_ingredient_line", ingredient: ingredient %>
               </span>
               <%= form_for ingredient do |f| %>
-                <%= button_to 'Delete', ingredients_path(ingredient), { method: :delete, :class => "delete_button" } %>
+                <%= button_to 'Delete', ingredient_path(ingredient), { method: :delete, :class => "delete_button" } %>
               <% end %>
             <% end %>
           <% end %>
