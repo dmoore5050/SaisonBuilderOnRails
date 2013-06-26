@@ -1,9 +1,5 @@
 class HomeController < ApplicationController
 
-  def build
-    add_crumb 'Build', '/'
-  end
-
   def learn
     add_crumb 'Learn', '/'
   end
