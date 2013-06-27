@@ -26,7 +26,7 @@
 }
 
 .pull_right {
-  margin-left: 144px;
+  margin-left: 286px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
 }
@@ -68,7 +68,15 @@
 
 #ingredient_label {
   display: block;
-  margin-top: 92px;
+  margin-top: 78px;
+}
+
+#form_partial_wrapper > .form_count:first-of-type select, #form_partial_wrapper > select:first-of-type {
+  margin-left: 0!important;
+}
+
+.ingredient_select {
+  margin-left: 148px;
 }
 
 .hidden_label {
@@ -85,3 +93,6 @@
   min-width: 147px;
 }
 
+.hidden {
+  display: none;
+}

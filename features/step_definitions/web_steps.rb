@@ -48,8 +48,24 @@ When(/^I find and (?:click|press) the first "(.*?)"$/) do |text|
   end
 end
 
+When(/^I choose "(.*?)" for "(.*?)"$/) do |option, field_name|
+  select option, from: field_name
+end
+
+When(/^I find and choose "(.*?)" for "(.*?)"$/) do |option, field_name|
+  within(".hidden") do
+    select option, from: field_name
+  end
+end
+
 When(/^I fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
-  fill_in field_name, :with => text
+  fill_in field_name, with: text
+end
+
+When(/^I find and fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
+  within(".hidden") do
+    fill_in field_name, with: text
+  end
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
@@ -58,10 +74,6 @@ end
 
 Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content text
-end
-
-Then(/^I choose "(.*?)" for "(.*?)"$/) do |option, field_name|
-  select option, :from => field_name
 end
 
 When(/^show me the page$/) do

@@ -1,0 +1,28 @@
+%h2.page_head Build Saison
+
+= form_for @recipe do | recipe_form |
+  .wrapper
+    = render "recipe_form", recipe_form: recipe_form
+    = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
+
+      = button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right", id: 'add_form_line'
+      %br/
+
+      #form_partial_wrapper
+        = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
+
+          = recipe_ingredients_form.label :quantity, 'Quantity:', :id => "quantity_label"
+          = recipe_ingredients_form.label :usage, 'Usage:', :id => "usage_label"
+          = recipe_ingredients_form.label :duration, 'Duration:', :id => "duration_label"
+          %br/
+
+          = render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form
+        %br/
+
+        .hidden
+          %span#clone_template.form_clone
+            = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
+              = render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form
+            %br/
+      %br/
+  = recipe_form.submit 'Add Recipe', :class => "add_record_button center top_bump"
