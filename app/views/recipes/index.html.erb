@@ -5,15 +5,15 @@
   <% @recipes.each_with_index do | recipe, i | %>
     <li>
       <% if recipe.user_id.nil? %>
-        <%= render "print_recipe_line", recipe: recipe, i: i %>
+        <span class='left'>
+          <%= render "print_recipe_line", recipe: recipe, i: i %>
+        </span>
       <% else %>
         <% if current_user.id == recipe.user_id %>
           <%= render "print_recipe_line", recipe: recipe, i: i %>
-
           <%= form_for recipe, html: { :class => 'inline_form' } do |f| %>
             <%= button_to 'Delete', recipe_path(recipe), method: :delete %>
           <% end %><br>
-
         <% end %>
       <% end %>
     </li>

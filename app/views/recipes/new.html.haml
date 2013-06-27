@@ -11,9 +11,9 @@
       #form_partial_wrapper
         = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
 
-          = recipe_ingredients_form.label :quantity, 'Quantity:', :id => "quantity_label"
-          = recipe_ingredients_form.label :usage, 'Usage:', :id => "usage_label"
-          = recipe_ingredients_form.label :duration, 'Duration:', :id => "duration_label"
+          = recipe_ingredients_form.label :quantity, 'Quantity:', id: "quantity_label"
+          = recipe_ingredients_form.label :usage, 'Usage:', id: "usage_label"
+          = recipe_ingredients_form.label :duration, 'Duration:', id: "duration_label"
           %br/
 
           = render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form

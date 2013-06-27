@@ -1,0 +1,8 @@
+%span.recipe_name_block
+  = %(#{i + 1}. #{link_to(recipe.name.titleize, recipe_path(recipe))}:).html_safe
+%span.recipe_description_block
+  = " #{recipe.description}"
+  - if current_user
+    = form_tag edit_recipe_path(recipe), :class => 'align_right', method: :get do
+      = submit_tag 'Modify'
+    %br/
