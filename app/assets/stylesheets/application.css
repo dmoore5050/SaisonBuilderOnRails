@@ -189,3 +189,9 @@ form label:first-child {
 .top_bump {
   margin-top: 10px!important;
 }
+
+.no_float {
+  float: none;
+  margin-left: 0;
+}
+
