@@ -4,6 +4,10 @@
 
 $(document).ready(function() {
 
+  $('#reveal_notes_field').click(function(){
+    $('#notes_wrapper').removeClass('hidden');
+  });
+
   $('#add_form_line').click(function(){
     var clonedForm = $('#clone_template').clone();
     formatForm(clonedForm);

@@ -23,14 +23,18 @@
         %br/
   %br/
 
-  .recipe_align= "Primary Fermentation Temp:      #{@recipe.primary_fermentation_temp}"
+  .recipe_align= "Primary Fermentation Temp: #{@recipe.primary_fermentation_temp}"
+  - unless @recipe.notes.nil?
+    %br/
+    %b.recipe_align= "Notes:"
+    = "#{@recipe.notes}"
 
 = form_for @recipe do | recipe_form |
-  = button_tag "Add Tasting Notes", type: 'button', :class => "add_record_button center", id: 'reveal_notes_field'
-  #notes_wrapper.hidden
-    = recipe_form.label :notes, 'Brewday/Tasting Notes:'
-    %br/
-    = recipe_form.text_area :notes, :size => "60x10"
-    %br/
-    =recipe_form.submit 'Save Notes', :class => "add_record_button center top_bump"
+  .button_wrapper
+    = button_tag "Add/Modify Notes", type: 'button', :class => "add_record_button left", id: 'reveal_notes_field'
+    #notes_wrapper.hidden
+      = recipe_form.label :notes, 'Brewday/Tasting Notes', hidden: true
+      = recipe_form.text_area :notes, placeholder: "Enter any tasting or brew-day notes here.", :size => "60x4", :class => 'left_no_clear'
+      %br/
+      =recipe_form.submit 'Save Notes', :class => "add_record_button", id: 'save_notes_button'
 

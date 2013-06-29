@@ -72,13 +72,18 @@
 }
 
 #reveal_notes_field {
-  margin-bottom: 15px;
+  margin: 10px 0 15px 0;
   background-color: lightgray;
   height: 30px;
 }
 
 .hidden {
   display: none;
+}
+
+.button_wrapper {
+  width: 700px;
+  display: inline-block;
 }
 
 #form_partial_wrapper > .form_count:first-of-type select, #form_partial_wrapper > select:first-of-type {
@@ -101,4 +106,14 @@
 
 .usage_select {
   min-width: 147px;
+}
+
+.left_no_clear {
+  float: left;
+  clear: none;
+  margin: 10px 8px 10px 15px;
+}
+
+#save_notes_button {
+  margin-top: -5px;
 }

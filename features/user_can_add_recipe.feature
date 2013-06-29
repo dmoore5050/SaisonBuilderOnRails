@@ -96,7 +96,7 @@ Feature: User can add a recipe
     And I press "Add Recipe"
     And I click "New Saison"
     Then I should see "New Saison"
-    And I should see "1.0 pkg Dupont Strain"
+    And I should see "1.0 pk Dupont Strain"
     And I should see "Add during: Primary. WL: WLP565, Wy: 3724"
 
   Scenario: Duplicate Name
