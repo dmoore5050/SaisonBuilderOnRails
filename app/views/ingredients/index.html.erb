@@ -9,7 +9,7 @@
           <% if ingredient.user_id.nil? %>
             <%= render "print_ingredient_line", ingredient: ingredient %>
           <% else %>
-            <% if current_user.id == ingredient.user_id %>
+            <% if current_user && current_user.id == ingredient.user_id %>
               <span class="left">
                 <%= render "print_ingredient_line", ingredient: ingredient %>
               </span>
