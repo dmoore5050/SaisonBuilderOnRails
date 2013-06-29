@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618153625) do
+ActiveRecord::Schema.define(:version => 20130629185842) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.string  "type_code"
+    t.string   "type_code"
     t.integer  "yeast_code_wyeast"
     t.integer  "yeast_code_wl"
     t.datetime "created_at",        :null => false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130618153625) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
-    t.string  "boil_length"
+    t.string   "boil_length"
     t.string   "primary_fermentation_temp"
     t.string   "description"
     t.datetime "created_at",                :null => false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130618153625) do
     t.string   "batch_size"
     t.string   "mash_length"
     t.string   "mash_temp"
+    t.text     "notes"
   end
 
   create_table "users", :force => true do |t|

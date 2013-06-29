@@ -47,7 +47,7 @@ end
 
 recipe_array = [
   [
-    ['classic', 90, '85F', 'Dry, rustic, yeast-centric, light pear, unadorned.', '5 gallons', '75 mins', '149F' ],
+    ['classic', '90 mins', '85F', 'Dry, rustic, yeast-centric, light pear, unadorned.', '5 gallons', '75 mins', '149F' ],
     [
       ['pilsner', nil, 9, nil],
       ['munich', nil, 1, nil],
@@ -58,7 +58,7 @@ recipe_array = [
     ]
   ],
   [
-    ['hoppy classic', 90, '85F', 'Dry, grassy, peppery, light pear, earthy.', '5 gallons', '75 mins', '149F'],
+    ['hoppy classic', '90 mins', '85F', 'Dry, grassy, peppery, light pear, earthy.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 9, nil],
       ['wheat malt', nil, 0.5, nil],
@@ -72,7 +72,7 @@ recipe_array = [
     ]
   ],
   [
-    ['rye saison', 90, '65-72F', 'Earthy malt character, restrained hops, yeast-forward.', '5 gallons', '75 mins', '149F'],
+    ['rye saison', '90 mins', '65-72F', 'Earthy malt character, restrained hops, yeast-forward.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 6, nil],
       ['rye malt', nil, 3, nil],
@@ -84,7 +84,7 @@ recipe_array = [
     ]
   ],
   [
-    ['new world', 60, '65-72F', 'Dry, bright, citrus, fruit, peppery.', '5 gallons', '75 mins', '149F'],
+    ['new world', '60 mins', '65-72F', 'Dry, bright, citrus, fruit, peppery.', '5 gallons', '75 mins', '149F'],
     [
       ['pale malt', nil, 7, nil],
       ['wheat malt', nil, 2, nil],
@@ -100,7 +100,7 @@ recipe_array = [
     ]
   ],
   [
-    ['black saison', 60, '65-72F', 'Complex malt character, mild roast, spicy yeast character.', '5 gallons', '75 mins', '149F'],
+    ['black saison', '60 mins', '65-72F', 'Complex malt character, mild roast, spicy yeast character.', '5 gallons', '75 mins', '149F'],
     [
       ['pale malt', nil, 8, nil],
       ['munich', nil, 2, nil],
@@ -111,7 +111,7 @@ recipe_array = [
     ]
   ],
   [
-    ['pacific 6 grain', 60, '65-72F', 'Bright, clean citrus, crisp, underlying malt complexity.', '5 gallons', '75 mins', '149F'],
+    ['pacific 6 grain', '60 mins', '65-72F', 'Bright, clean citrus, crisp, underlying malt complexity.', '5 gallons', '75 mins', '149F'],
     [
       ['pilsner', nil, 5, nil],
       ['rye malt', nil, 3, nil],
