@@ -9,7 +9,7 @@
           <%= render "print_recipe_line", recipe: recipe, i: i %>
         </span>
       <% else %>
-        <% if current_user.id == recipe.user_id %>
+        <% if current_user && current_user.id == recipe.user_id %>
           <%= render "print_recipe_line", recipe: recipe, i: i %>
           <%= form_for recipe, html: { :class => 'inline_form' } do |f| %>
             <%= button_to 'Delete', recipe_path(recipe), method: :delete, :class => 'no_float' %>
