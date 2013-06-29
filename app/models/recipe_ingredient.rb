@@ -13,7 +13,7 @@ class RecipeIngredient < ActiveRecord::Base
 
   def render_line_item(type, ingr_record)
     measure = quantity_unit type
-    line_item = "<div class='label_block recipe_align'>#{self.quantity} #{measure} #{ingr_record.name.titleize}</div>"
+    line_item = "<div class='label_block recipe_align'>#{self.quantity} #{measure} <b>#{ingr_record.name.titleize}</b></div>"
     line_item += add_usage self                     unless self.usage.nil?
     line_item += add_duration self unless self.duration.nil?
     line_item += add_yeast_codes ingr_record        unless ingr_record.yeast_code_wl.nil?
@@ -37,7 +37,7 @@ class RecipeIngredient < ActiveRecord::Base
 
   def quantity_unit(type)
     if ['2', '4', '6'].include? type then 'oz'
-    elsif type == '3' then 'pkg'
+    elsif type == '3' then 'pk'
     else 'lbs'
     end
   end

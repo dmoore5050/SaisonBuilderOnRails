@@ -71,6 +71,16 @@
   margin-top: 71px;
 }
 
+#reveal_notes_field {
+  margin-bottom: 15px;
+  background-color: lightgray;
+  height: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
 #form_partial_wrapper > .form_count:first-of-type select, #form_partial_wrapper > select:first-of-type {
   margin-left: 0!important;
 }
@@ -91,8 +101,4 @@
 
 .usage_select {
   min-width: 147px;
-}
-
-.hidden {
-  display: none;
 }

@@ -1,8 +1,8 @@
-%h2.page_head= @recipe.name.capitalize
+%h2.page_head= @recipe.name.titleize
 
 .wrapper
   .label_block.recipe_align= "Name:"
-  = "#{@recipe.name.capitalize}"
+  %b= "#{@recipe.name.titleize}"
   %br/
   .label_block.recipe_align= "Batch size:"
   = "#{@recipe.batch_size}"
@@ -24,4 +24,13 @@
   %br/
 
   .recipe_align= "Primary Fermentation Temp:      #{@recipe.primary_fermentation_temp}"
+
+= form_for @recipe do | recipe_form |
+  = button_tag "Add Tasting Notes", type: 'button', :class => "add_record_button center", id: 'reveal_notes_field'
+  #notes_wrapper.hidden
+    = recipe_form.label :notes, 'Brewday/Tasting Notes:'
+    %br/
+    = recipe_form.text_area :notes, :size => "60x10"
+    %br/
+    =recipe_form.submit 'Save Notes', :class => "add_record_button center top_bump"
 
