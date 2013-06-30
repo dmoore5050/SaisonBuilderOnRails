@@ -1,7 +1,7 @@
 %h2.page_head Build Saison
 
 = form_for @recipe do | recipe_form |
-  .wrapper
+  .recipe_form_wrapper
     = render "recipe_form", recipe_form: recipe_form
     = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
 

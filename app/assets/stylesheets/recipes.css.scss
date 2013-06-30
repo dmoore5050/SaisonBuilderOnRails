@@ -26,7 +26,7 @@
 }
 
 .pull_right {
-  margin-left: 283px;
+  margin-left: 263px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
 }
@@ -48,7 +48,7 @@
 }
 
 .recipe_align {
-  margin-left: 150px;
+  margin-left: 60px;
 }
 
 #quantity_label {
@@ -82,7 +82,7 @@
 }
 
 .button_wrapper {
-  width: 700px;
+  width: 580px;
   display: inline-block;
 }
 
@@ -111,9 +111,32 @@
 .left_no_clear {
   float: left;
   clear: none;
-  margin: 10px 8px 10px 15px;
+  margin: 10px 7px 10px -5px;
 }
 
 #save_notes_button {
-  margin-top: -5px;
+  margin-top: -7px;
+  height: 30px;
+  width: 90px;
+}
+
+.recipe_view_wrapper {
+  min-width: 560px;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: rgb(247, 247, 247);
+  padding: 15px;
+}
+
+.recipe_form_wrapper {
+  min-width: 680px;
+  max-width: 900px;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: rgb(247, 247, 247);
+  padding: 15px 0 0 25px;
 }

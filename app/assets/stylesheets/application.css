@@ -147,6 +147,17 @@ form label:first-child {
   padding: 15px;
 }
 
+.list_wrapper {
+  min-width: 700px;
+  max-width: 900px;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: rgb(247, 247, 247);
+  padding: 8px 15px;
+}
+
 .left_justify {
   text-align: left;
 }

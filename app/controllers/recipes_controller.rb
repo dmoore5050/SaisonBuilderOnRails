@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe.update_attributes(params[:recipe])
-    redirect_to recipes_url
+    redirect_to recipe_url(@recipe)
   end
 
   def create

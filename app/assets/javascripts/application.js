@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   $('#reveal_notes_field').click(function(){
     $('#notes_wrapper').removeClass('hidden');
+    $('#reveal_notes_field').hide();
   });
 
   $('#add_form_line').click(function(){

@@ -1,6 +1,6 @@
 %h2.page_head= @recipe.name.titleize
 
-.wrapper
+.recipe_view_wrapper
   .label_block.recipe_align= "Name:"
   %b= "#{@recipe.name.titleize}"
   %br/
@@ -24,7 +24,7 @@
   %br/
 
   .recipe_align= "Primary Fermentation Temp: #{@recipe.primary_fermentation_temp}"
-  - unless @recipe.notes.nil?
+  - unless @recipe.notes.nil? || @recipe.notes == ""
     %br/
     %b.recipe_align= "Notes:"
     = "#{@recipe.notes}"
@@ -34,7 +34,7 @@
     = button_tag "Add/Modify Notes", type: 'button', :class => "add_record_button left", id: 'reveal_notes_field'
     #notes_wrapper.hidden
       = recipe_form.label :notes, 'Brewday/Tasting Notes', hidden: true
-      = recipe_form.text_area :notes, placeholder: "Enter any tasting or brew-day notes here.", :size => "60x4", :class => 'left_no_clear'
+      = recipe_form.text_area :notes, placeholder: "Enter any tasting or brew-day notes here.", :size => "73x6", :class => 'left_no_clear'
       %br/
       =recipe_form.submit 'Save Notes', :class => "add_record_button", id: 'save_notes_button'
 

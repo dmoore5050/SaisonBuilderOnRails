@@ -1,7 +1,7 @@
 %h2.page_head Modify #{@recipe.name.titleize}
 
 = form_for @recipe do | recipe_form |
-  .wrapper
+  .recipe_form_wrapper
     = render "recipe_form", recipe_form: recipe_form
     = recipe_form.fields_for :recipe_ingredient do | recipe_ingredients_form |
       = button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right", id: 'add_update_form_line'
