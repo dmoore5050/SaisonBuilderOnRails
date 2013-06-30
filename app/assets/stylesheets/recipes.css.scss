@@ -21,6 +21,10 @@
   float: right;
 }
 
+.align_right input {
+  margin-left: 0;
+}
+
 .inline_form {
   display: inline-block;
 }

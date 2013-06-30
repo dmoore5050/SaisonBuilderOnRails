@@ -1,0 +1,14 @@
+%h2.page_head Recipe List
+
+.list_wrapper.left_justify
+  %ul
+    - @recipes.each_with_index do | recipe, i |
+      %li
+        = render "print_recipe_line", recipe: recipe, i: i
+
+- if current_user
+  = button_to 'Add Recipe', new_recipe_path, :class => 'add_record_button', type: 'button', method: :get
+
+- unless current_user
+  %span.center= link_to "Log in", user_session_path
+  = to add a recipe

@@ -147,6 +147,22 @@ form label:first-child {
   padding: 15px;
 }
 
+.red {
+  background-color: #CE2029;
+  color: white;
+  height: 18px;
+  border-radius: 5px;
+  padding-top: 1px;
+}
+
+.blue_button {
+  background-color: #222F5E;
+  color: white;
+  height: 18px;
+  border-radius: 5px;
+  padding-top: 1px;
+}
+
 .list_wrapper {
   min-width: 700px;
   max-width: 900px;

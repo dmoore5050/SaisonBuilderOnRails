@@ -4,5 +4,8 @@
   = " #{recipe.description}"
   - if current_user
     = form_tag edit_recipe_path(recipe), :class => 'align_right', method: :get do
-      = submit_tag 'Modify'
+      = submit_tag 'Modify', :class => 'blue_button'
+- if current_user && current_user.id == recipe.user_id
+  = form_for recipe, html: { :class => 'align_right inline_form' } do |f|
+    = button_to 'Delete', recipe_path(recipe), { method: :delete, :class => 'red' }
     %br/

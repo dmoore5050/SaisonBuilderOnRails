@@ -2,27 +2,16 @@
 
 <div class='list_wrapper left_justify'>
   <ul>
-  <% (1..7).each do | type | %>
-    <% @ingredients.each do | ingredient | %>
-      <% if ingredient.type_code == type.to_s %>
-        <li id='ingredient_list'>
-          <% if ingredient.user_id.nil? %>
+    <% (1..7).each do | type | %>
+      <% @ingredients.each do | ingredient | %>
+        <% if ingredient.type_code == type.to_s %>
+          <li id='ingredient_list'>
             <%= render "print_ingredient_line", ingredient: ingredient %>
-          <% else %>
-            <% if current_user && current_user.id == ingredient.user_id %>
-              <span class="left">
-                <%= render "print_ingredient_line", ingredient: ingredient %>
-              </span>
-              <%= form_for ingredient do |f| %>
-                <%= button_to 'Delete', ingredient_path(ingredient), { method: :delete, :class => "delete_button" } %>
-              <% end %>
-            <% end %>
-          <% end %>
+          </li>
           <% @i += 1 %>
-        </li>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
   </ul>
 </div>
 
