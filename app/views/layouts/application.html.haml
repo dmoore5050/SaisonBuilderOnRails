@@ -19,14 +19,10 @@
       - if current_user
         %span#email.right_nav.nav_text= current_user.email
         = link_to 'log out', destroy_user_session_path, :class => 'right_nav nav_button', :method => :delete
-
-      - unless current_user
+      - else
         = link_to 'log in', new_user_session_path, :class => 'right_nav nav_button'
-
       = link_to 'ingredients', ingredients_path, :class => 'right_nav nav_button'
-
       = link_to 'recipes', recipes_path, :class => 'right_nav nav_button'
-
       = link_to 'learn', home_learn_path, :class => 'right_nav nav_button'
 
   = yield

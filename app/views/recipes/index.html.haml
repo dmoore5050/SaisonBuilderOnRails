@@ -8,7 +8,6 @@
 
 - if current_user
   = button_to 'Add Recipe', new_recipe_path, :class => 'add_record_button', type: 'button', method: :get
-
-- unless current_user
+- else
   %span.center= link_to "Log in", user_session_path
-  = to add a recipe
+  = 'to add a recipe'

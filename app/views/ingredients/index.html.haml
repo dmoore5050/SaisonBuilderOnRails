@@ -1,0 +1,17 @@
+%h2.page_head Ingredients List
+
+.list_wrapper.left_justify
+  %ul
+    - (1..7).each do | type |
+      - @ingredients.each do | ingredient |
+        - if ingredient.type_code == type.to_s
+          %li#ingredient_list
+            = render "print_ingredient_line", ingredient: ingredient
+          - @i += 1
+
+
+- if current_user
+  = button_to 'Add Ingredient', new_ingredient_path, :class => 'add_record_button', type: 'button', method: :get
+- else
+  %span.center= link_to "Log in", user_session_path
+  = 'to add a recipe'
