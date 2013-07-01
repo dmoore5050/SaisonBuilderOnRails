@@ -4,7 +4,7 @@ Feature: Users can view list of ingredients
   I want to view a list of possible ingredients
 
   Scenario: Successful Navigation
-    Given an ingredient "Dupont Strain", type code "3"
+    Given no user and the ingredient "Dupont Strain", type code "3"
     When I go to the homepage
     And I click "ingredients"
     Then I should see "Ingredients List"

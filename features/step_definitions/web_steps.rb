@@ -7,7 +7,7 @@ Given(/^the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
   user.ingredients.create(name: name, type_code: type.to_i)
 end
 
-Given(/^an ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
+Given(/^no user and the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
   Ingredient.create(name: name, type_code: type.to_i)
 end
 
@@ -22,6 +22,12 @@ end
 Given(/^the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
   user = User.find_by_email('clyde@brewit.org')
   recipe = user.recipes.create(name: recipe_name)
+  ingredient = Ingredient.where(name: ingredient_name).first
+  recipe.recipe_ingredients.create!(ingredient_id: ingredient.id, quantity: quantity)
+end
+
+Given(/^no user and the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
+  recipe = Recipe.create(name: recipe_name)
   ingredient = Ingredient.where(name: ingredient_name).first
   recipe.recipe_ingredients.create!(ingredient_id: ingredient.id, quantity: quantity)
 end
