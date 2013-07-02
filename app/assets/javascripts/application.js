@@ -19,7 +19,7 @@ $(document).ready(function() {
   $('#add_update_form_line').click(function(){
     var clonedForm = $('#clone_template').clone();
     formatForm(clonedForm);
-    var numItems = $('.form_count').length - 2;
+    var numItems = $('.form_count').length - 1;
     incrementIDs( clonedForm, numItems )
   });
 

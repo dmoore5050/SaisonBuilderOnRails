@@ -54,6 +54,12 @@ When(/^I find and (?:click|press) the first "(.*?)"$/) do |text|
   end
 end
 
+When(/^I find the last "(.*?)" and choose "(.*?)"$/) do |field_name, option|
+  within(".hidden") do
+    select option, from: field_name
+  end
+end
+
 When(/^I choose "(.*?)" for "(.*?)"$/) do |option, field_name|
   select option, from: field_name
 end
@@ -69,6 +75,12 @@ When(/^I fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
 end
 
 When(/^I find and fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
+  within(".hidden") do
+    fill_in field_name, with: text
+  end
+end
+
+When(/^I find the last "(.*?)" and fill in "(.*?)"$/) do |field_name, text|
   within(".hidden") do
     fill_in field_name, with: text
   end

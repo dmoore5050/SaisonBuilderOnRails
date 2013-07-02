@@ -2,9 +2,9 @@
 
 = form_for @recipe do | recipe_form |
   .recipe_form_wrapper
-    = render "recipe_form", recipe_form: recipe_form
+    = render 'recipe_form', recipe_form: recipe_form
     = recipe_form.fields_for :recipe_ingredient do | recipe_ingredients_form |
-      = button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right", id: 'add_update_form_line'
+      = button_tag "Add'l Ingredient", type: 'button', :class => 'add_record_button center pull_right', id: 'add_update_form_line'
       %br/
 
       %span#quantity_label Quantity:
@@ -15,13 +15,14 @@
 
         = recipe_form.fields_for :recipe_ingredients, @recipe_ingredients do | recipe_ingredients_form |
           %span.form_count
-            = render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form
+            = render 'recipe_ingredient_form', recipe_ingredients_form: recipe_ingredients_form
+            / = recipe_ingredients_form.submit 'Delete', :class => 'red'
           %br/
 
       .hidden
         %span#clone_template.form_count
           = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
-            = render "recipe_ingredient_form", recipe_ingredients_form: recipe_ingredients_form
+            = render 'recipe_ingredient_form', recipe_ingredients_form: recipe_ingredients_form
           %br/
     %br/
   = recipe_form.submit 'Save Recipe', :class => 'add_record_button center top_bump'
