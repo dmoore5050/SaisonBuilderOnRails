@@ -39,6 +39,9 @@ button a {
   background: #1d2951;
   color: white;
   border-bottom: 6px solid #ff9f00;
+  position: fixed;
+  width: 97%;
+  top: 0;
 }
 
 .nav_text {
@@ -191,6 +194,12 @@ form label:first-child {
 .center {
   text-align: center;
   display: block;
+  margin-bottom: 20px;
+}
+
+.inline_center {
+  text-align: center;
+  display: inline-block;
   margin-bottom: 20px;
 }
 

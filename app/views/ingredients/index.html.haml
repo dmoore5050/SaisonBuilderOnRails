@@ -12,6 +12,8 @@
 
 - if current_user
   = button_to 'Add Ingredient', new_ingredient_path, :class => 'add_record_button', type: 'button', method: :get
+  %br/
 - else
-  %span.center= link_to "Log in", user_session_path
-  = 'to add a recipe'
+  %br/
+  %span.inline_center.top_bump= link_to "Log in", user_session_path
+  = 'to add an ingredient'
