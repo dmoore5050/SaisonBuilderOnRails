@@ -17,7 +17,8 @@
           = recipe_form.fields_for :recipe_ingredients, recipe_ingredient do | recipe_ingredients_form |
             %span.form_count
               = render 'recipe_ingredient_form', recipe_ingredients_form: recipe_ingredients_form
-              = button_to 'Delete', recipe_ingredient_path(recipe_ingredient), { method: :delete, :class => 'red right_margin', :confirm => "Are you sure?" }
+              = button_tag name: 'destroy', :class => 'red right_margin' do
+                = link_to "Delete", recipe_ingredient , :method => :delete, :confirm => "Are you sure?"
             %br/
 
       .hidden

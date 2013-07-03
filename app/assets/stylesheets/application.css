@@ -29,6 +29,11 @@ html, body {
   margin: 0;
 }
 
+button a {
+  text-decoration: none;
+  color: white;
+}
+
 #nav_wrapper {
   padding: 5px 20px 5px 20px;
   background: #1d2951;
