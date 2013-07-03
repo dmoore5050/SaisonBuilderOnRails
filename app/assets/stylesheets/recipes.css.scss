@@ -21,6 +21,11 @@
   float: right;
 }
 
+.quantity_block {
+  width: 50px;
+  display: inline-block;
+}
+
 .right_margin {
   margin-right: 10px;
 }
@@ -85,6 +90,14 @@
   height: 30px;
 }
 
+#og_label {
+  margin-left: -5px;
+}
+
+#fg_label, #efficiency_label {
+  margin-left: 11px;
+}
+
 .hidden {
   display: none!important;
 }
@@ -129,11 +142,11 @@
 .left_no_clear {
   float: left;
   clear: none;
-  margin: 10px 7px 10px -5px;
+  margin: 5px 7px 10px -5px;
 }
 
 #save_notes_button {
-  margin-top: -7px;
+  margin-top: -15px!important;
   height: 30px;
   width: 90px;
 }

@@ -1,17 +1,20 @@
 %h2.page_head= @recipe.name.titleize
 
 .recipe_view_wrapper
-  .label_block.recipe_align= "Name:"
-  %b= "#{@recipe.name.titleize}"
+  %b.label_block.recipe_align= "Name:"
+  = "#{@recipe.name.titleize}"
   %br/
-  .label_block.recipe_align= "Batch size:"
+  %b.label_block.recipe_align= "Batch size:"
   = "#{@recipe.batch_size}"
   %br/
-  .label_block.recipe_align= "Mash:"
+  %b.label_block.recipe_align= "Mash:"
   = "#{@recipe.mash_length} @ #{@recipe.mash_temp}"
   %br/
-  .label_block.recipe_align= "Boil length:"
+  %b.label_block.recipe_align= "Boil length:"
   = "#{@recipe.boil_length}"
+  %br/
+  %b.label_block.recipe_align= "Primary Fermentation Temp:"
+  = "#{@recipe.primary_fermentation_temp}"
   %br/
   %br/
 
