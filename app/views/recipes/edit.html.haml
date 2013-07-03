@@ -13,11 +13,12 @@
 
       #form_partial_wrapper
 
-        = recipe_form.fields_for :recipe_ingredients, @recipe_ingredients do | recipe_ingredients_form |
-          %span.form_count
-            = render 'recipe_ingredient_form', recipe_ingredients_form: recipe_ingredients_form
-            / = recipe_ingredients_form.submit 'Delete', :class => 'red'
-          %br/
+        - for recipe_ingredient in @recipe_ingredients do
+          = recipe_form.fields_for :recipe_ingredients, recipe_ingredient do | recipe_ingredients_form |
+            %span.form_count
+              = render 'recipe_ingredient_form', recipe_ingredients_form: recipe_ingredients_form
+              = button_to 'Delete', recipe_ingredient_path(recipe_ingredient), { method: :delete, :class => 'red right_margin', :confirm => "Are you sure?" }
+            %br/
 
       .hidden
         %span#clone_template.form_count
