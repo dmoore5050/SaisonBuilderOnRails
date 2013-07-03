@@ -54,6 +54,12 @@ When(/^I find and (?:click|press) the first "(.*?)"$/) do |text|
   end
 end
 
+When (/^I find the first "(.*?)" and (?:click|press) it$/) do |text|
+  within(".form_count:first-of-type button") do
+    click_link_or_button text
+  end
+end
+
 When(/^I find the last "(.*?)" and choose "(.*?)"$/) do |field_name, option|
   within(".hidden") do
     select option, from: field_name
