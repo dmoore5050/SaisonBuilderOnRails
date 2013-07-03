@@ -21,6 +21,10 @@
   float: right;
 }
 
+.right_margin {
+  margin-right: 10px;
+}
+
 .align_right input {
   margin-left: 0;
 }
@@ -30,7 +34,7 @@
 }
 
 .pull_right {
-  margin-left: 263px;
+  margin-left: 285px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
 }
@@ -62,12 +66,12 @@
 
 #usage_label {
   position: relative;
-  left: 174px;
+  left: 182px;
 }
 
 #duration_label {
   position: relative;
-  left: 273px;
+  left: 290px;
 }
 
 #ingredient_label {
@@ -90,8 +94,18 @@
   display: inline-block;
 }
 
-#form_partial_wrapper > .form_count:first-of-type select, #form_partial_wrapper > select:first-of-type {
+#form_partial_wrapper > .form_count:first-of-type select,
+#form_partial_wrapper > select:first-of-type,
+.form_count select:last-of-type {
   margin-left: 0!important;
+}
+
+#form_partial_wrapper div:first-of-type {
+  display: inline-block;
+}
+
+#form_partial_wrapper form {
+  display: inline-block;
 }
 
 .ingredient_select {
@@ -135,7 +149,7 @@
 }
 
 .recipe_form_wrapper {
-  min-width: 680px;
+  min-width: 720px;
   max-width: 900px;
   display: inline-block;
   text-align: left;
