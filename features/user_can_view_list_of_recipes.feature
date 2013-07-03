@@ -1,4 +1,4 @@
-Feature: User can view recipe
+Feature: User can view recipe and recipe list
   In order to choose a recipe
   As a user
   I want to view the recipe
