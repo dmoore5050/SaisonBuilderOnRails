@@ -24,18 +24,32 @@
       - if ingr_record.type_code == type.to_s
         = ingredient.render_line_item(type.to_s, ingr_record).html_safe
         %br/
-  %br/
 
-  .recipe_align= "Primary Fermentation Temp: #{@recipe.primary_fermentation_temp}"
   - unless @recipe.notes.nil? || @recipe.notes == ""
+    %h3.recipe_align= "User Notes:"
+    %b.label_block.recipe_align= "OG:"
+    ="#{@recipe.og}"
     %br/
-    %b.recipe_align= "Notes:"
+    %b.label_block.recipe_align= "FG:"
+    ="#{@recipe.fg}"
+    %br/
+    %b.label_block.recipe_align= "Measured Efficiency:"
+    ="#{@recipe.efficiency}"
+    %br/
+    %b.label_block.recipe_align= "Notes:"
     = "#{@recipe.notes}"
 
 = form_for @recipe do | recipe_form |
   .button_wrapper
     = button_tag "Add/Modify Notes", type: 'button', :class => "add_record_button left", id: 'reveal_notes_field'
     #notes_wrapper.hidden
+      .top_bump
+        = recipe_form.label :og, 'Original Gravity:', id: 'og_label'
+        = recipe_form.text_field :og, placeholder: "Ex: 1.054", size: '12x20'
+        = recipe_form.label :fg, 'Final Gravity:', id: 'fg_label'
+        = recipe_form.text_field :fg, placeholder: "Ex: 1.011", size: '12x20'
+        = recipe_form.label :efficiency, 'Measured Efficiency:', id: 'efficiency_label'
+        = recipe_form.text_field :efficiency, placeholder: "Ex: 75%", size: '12x20'
       = recipe_form.label :notes, 'Brewday/Tasting Notes', hidden: true
       = recipe_form.text_area :notes, placeholder: "Enter any tasting or brew-day notes here.", :size => "73x6", :class => 'left_no_clear'
       %br/

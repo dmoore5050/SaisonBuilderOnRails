@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629185842) do
+ActiveRecord::Schema.define(:version => 20130703121701) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(:version => 20130629185842) do
     t.string   "mash_length"
     t.string   "mash_temp"
     t.text     "notes"
+    t.text     "og"
+    t.text     "fg"
+    t.text     "efficiency"
   end
 
   create_table "users", :force => true do |t|
