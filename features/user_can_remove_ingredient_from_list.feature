@@ -13,6 +13,6 @@ Scenario: Can Remove Recipe
   And I fill in "mypassword" for "Password"
   And I press "Sign in"
   And I click "ingredients"
-  And I find and press the first "Delete"
+  And I find and press the first "Delete" button in the list
   Then I should not see "Pilsner"
   And I should see "Munich"

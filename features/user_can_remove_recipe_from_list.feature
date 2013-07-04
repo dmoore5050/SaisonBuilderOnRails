@@ -14,6 +14,6 @@ Scenario: Can Remove Recipe
   And I fill in "mypassword" for "Password"
   And I press "Sign in"
   And I click "recipes"
-  And I find and press the first "Delete"
+  And I find and press the first "Delete" button in the list
   Then I should not see "Classic"
   And I should see "New World"

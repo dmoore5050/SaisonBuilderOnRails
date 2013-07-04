@@ -11,33 +11,21 @@ Given(/^no user and the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
   Ingredient.create(name: name, type_code: type.to_i)
 end
 
-Given(/^the yeast "(.*?)", with WL code "(.*?)" and Wyeast code "(.*?)"$/) do |name, wl_code, wyeast_code|
-  Ingredient.create(name: name, type_code: '3', yeast_code_wl: wl_code, yeast_code_wyeast: wyeast_code)
-end
-
 Given(/^a recipe ingredient with usage "(.*?)"$/) do  | usage |
   RecipeIngredient.create!(usage: usage.downcase)
 end
 
-Given(/^the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
+Given(/^the recipe "(.*?)" using "(.*?)" (?:lbs|ozs|package) of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
   user = User.find_by_email('clyde@brewit.org')
   recipe = user.recipes.create(name: recipe_name)
   ingredient = Ingredient.where(name: ingredient_name).first
   recipe.recipe_ingredients.create!(ingredient_id: ingredient.id, quantity: quantity)
 end
 
-Given(/^no user and the recipe "(.*?)" using "(.*?)" lbs of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
+Given(/^no user and the recipe "(.*?)" using "(.*?)" (?:lbs|ozs|package) of "(.*?)"$/) do |recipe_name, quantity, ingredient_name|
   recipe = Recipe.create(name: recipe_name)
   ingredient = Ingredient.where(name: ingredient_name).first
   recipe.recipe_ingredients.create!(ingredient_id: ingredient.id, quantity: quantity)
-end
-
-Given(/^the recipe "(.*?)" using 1 package of "(.*?)" and "(.*?)" ounces of "(.*?)" for "(.*?)" in the "(.*?)"$/) do |recipe_name, yeast_name, hop_quantity, hop_name, hop_duration, hop_usage|
-  recipe = Recipe.create(name: recipe_name)
-  yeast = Ingredient.where(name: yeast_name).first
-  recipe.recipe_ingredients.create(ingredient_id: yeast.id, quantity: '1')
-  hop = Ingredient.where(name: hop_name).first
-  recipe.recipe_ingredients.create(ingredient_id: hop.id, quantity: hop_quantity, duration: hop_duration, usage: hop_usage)
 end
 
 When(/^I go to the homepage$/) do
@@ -48,21 +36,15 @@ When(/^I (?:click|press) "(.*?)"$/) do |text|
   click_link_or_button text
 end
 
-When(/^I find and (?:click|press) the first "(.*?)"$/) do |text|
+When(/^I find and (?:click|press) the first "(.*?)" (?:link|button) in the list$/) do |text|
   within("li:first-child") do
     click_link_or_button text
   end
 end
 
-When (/^I find the first "(.*?)" and (?:click|press) it$/) do |text|
+When (/^I find the first "(.*?)" (?:link|button) in the form and (?:click|press) it$/) do |text|
   within(".form_count:first-of-type button") do
     click_link_or_button text
-  end
-end
-
-When(/^I find the last "(.*?)" and choose "(.*?)"$/) do |field_name, option|
-  within(".hidden") do
-    select option, from: field_name
   end
 end
 
@@ -70,7 +52,7 @@ When(/^I choose "(.*?)" for "(.*?)"$/) do |option, field_name|
   select option, from: field_name
 end
 
-When(/^I find and choose "(.*?)" for "(.*?)"$/) do |option, field_name|
+When(/^I find the last "(.*?)" select and choose "(.*?)"$/) do |field_name, option|
   within(".hidden") do
     select option, from: field_name
   end
@@ -80,13 +62,7 @@ When(/^I fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
   fill_in field_name, with: text
 end
 
-When(/^I find and fill in "(.*?)" for "(.*?)"$/) do |text, field_name|
-  within(".hidden") do
-    fill_in field_name, with: text
-  end
-end
-
-When(/^I find the last "(.*?)" and fill in "(.*?)"$/) do |field_name, text|
+When(/^I find the last "(.*?)" field and fill in "(.*?)"$/) do |field_name, text|
   within(".hidden") do
     fill_in field_name, with: text
   end

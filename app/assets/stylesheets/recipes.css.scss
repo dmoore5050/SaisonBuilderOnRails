@@ -107,9 +107,7 @@
   display: inline-block;
 }
 
-#form_partial_wrapper > .form_count:first-of-type select,
-#form_partial_wrapper > select:first-of-type,
-.form_count select:last-of-type {
+#form_partial_wrapper > .form_count:first-of-type select:first-of-type {
   margin-left: 0!important;
 }
 

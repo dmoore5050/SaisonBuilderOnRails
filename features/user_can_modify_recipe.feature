@@ -32,10 +32,10 @@ Feature: User can modify a recipe
     And I click "recipes"
     And I press "Modify"
     And I press "Add'l Ingredient"
-    And I find the last "Ingredient" and choose "Saaz"
-    And I find the last "Quantity" and fill in "1"
-    And I find the last "Usage" and choose "Boil"
-    And I find the last "Duration" and fill in "60 mins"
+    And I find the last "Ingredient" select and choose "Saaz"
+    And I find the last "Quantity" field and fill in "1"
+    And I find the last "Usage" select and choose "Boil"
+    And I find the last "Duration" field and fill in "60 mins"
     And I press "Save Recipe"
     Then I should see "Pilsner"
 
@@ -50,7 +50,7 @@ Feature: User can modify a recipe
     And I press "Sign in"
     And I click "recipes"
     And I press "Modify"
-    And I find the first "Delete" and press it
+    And I find the first "Delete" button in the form and press it
     And I click "recipes"
     And I click "Classic"
     Then I should not see "Pilsner"
