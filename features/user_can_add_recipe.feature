@@ -97,7 +97,7 @@ Feature: User can add a recipe
     And I click "New Saison"
     Then I should see "New Saison"
     And I should see "1.0 pk Dupont Strain"
-    And I should see "Add during: Primary"
+    And I should see "Add during: Primary. WL: WLP123, Wy: 1234"
 
   Scenario: Duplicate Name
     Given the user "clyde@brewit.org" with password "mypassword"

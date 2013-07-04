@@ -3,8 +3,9 @@ Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
 end
 
 Given(/^the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
+  type == '3' ? (wl_code, wyeast_code = '123', '1234') : (wl_code, wyeast_code = nil)
   user = User.find_by_email('clyde@brewit.org')
-  user.ingredients.create(name: name, type_code: type.to_i)
+  user.ingredients.create(name: name, type_code: type.to_i, yeast_code_wl: wl_code, yeast_code_wyeast: wyeast_code)
 end
 
 Given(/^no user and the ingredient "(.*?)", type code "(.*?)"$/) do |name, type|
