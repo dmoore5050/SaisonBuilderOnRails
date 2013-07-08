@@ -22,14 +22,13 @@ The following features are in place:
 * View Technique/Style articles
 * View Recipe/Ingredient lists
 * View Recipe
-* Modify existing Recipes
+* Modify existing Recipes (add/remove/modify ingredients/parameters)
 * Create new Ingredients/Recipes
 * Delete user-created Ingredients/Recipes
 
 ###To do:
 
-* Implement delete line item in recipe edit view
-* Explore using select box to filter ingredient select in n recipe edit/new view
+* Explore using select box to filter ingredient select in recipe edit/new view
 
 Features
 --------
@@ -43,13 +42,13 @@ The primary features of this app are as follows:
 
 * **Add new recipes/ingredients:** In addition to the included catalog of recipes and ingredients, the user can press the "Add Recipe" or "Add Ingredient" buttons on the respective list page and use a form to add a custom Ingredient/Recipe to the catalog. Custom Recipes can have an unlimited number of ingredients.
 
-* **Customize any existing recipe:** In addition to creating an all-new recipe, a user can also modify any existing recipe by clicking the "Modify" button next to the Recipe's description in the Recipe list. This will take the user to a preloaded form where the user can add additional Ingredients or modify any existing parameter(s).
+* **Customize any existing recipe:** In addition to creating an all-new recipe, a user can also modify any existing recipe by clicking the "Modify" button next to the Recipe's description in the Recipe list. This will take the user to a preloaded form where the user can add/delete/modify Ingredients or modify any existing parameter(s).
 
 * **Delete existing user-generated Recipes/Ingredients:** Finally, a user can delete any user-generated recipes by clicking that recipe's "Delete" button located after the "Modify" button in the Recipe list.
 
 Usage Instructions
 ------------------
-Planned usage is as follows:
+Usage is as follows:
 
 From the homepage, a user can follow the Learn, Ingredients, and Recipes links without logging in. This allows a user to view style and technique definitions, and lists of ingredients/recipes without signing in to an account.
 
