@@ -41,7 +41,7 @@
 
 = form_for @recipe do | recipe_form |
   .button_wrapper
-    = button_tag "Add/Modify Notes", type: 'button', :class => "add_record_button left", id: 'reveal_notes_field'
+    = button_tag "Add/Modify Notes", type: 'button', :class => "add_record_button", id: 'reveal_notes_field'
     #notes_wrapper.hidden
       .top_bump
         = recipe_form.label :og, 'Original Gravity:', id: 'og_label'
