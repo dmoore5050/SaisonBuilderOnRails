@@ -5,7 +5,7 @@
     = render "recipe_form", recipe_form: recipe_form
     = recipe_form.fields_for :recipe_ingredients, @recipe_ingredient do | recipe_ingredients_form |
 
-      = button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right", id: 'add_form_line'
+      = button_tag "Add'l Ingredient", type: 'button', :class => "add_record_button center pull_right_new", id: 'add_form_line'
       %br/
 
       #form_partial_wrapper

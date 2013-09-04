@@ -26,10 +26,6 @@
   display: inline-block;
 }
 
-.right_margin {
-  margin-right: 10px;
-}
-
 .align_right input {
   margin-left: 0;
 }
@@ -40,6 +36,12 @@
 
 .pull_right {
   margin-left: 296px;
+  margin-bottom: -5px!important;
+  margin-top: 15px!important;
+}
+
+.pull_right_new {
+  margin-left: 264px;
   margin-bottom: -5px!important;
   margin-top: 15px!important;
 }
@@ -169,11 +171,12 @@
 }
 
 .recipe_form_wrapper {
-  max-width: 746px;
+  min-width: 680px;
+  max-width: 736px;
   display: inline-block;
   text-align: left;
   border: 1px solid lightgrey;
   border-radius: 5px;
   background: rgb(247, 247, 247);
-  padding: 15px 0 15px 25px;
+  padding: 15px 10px 15px 25px;
 }

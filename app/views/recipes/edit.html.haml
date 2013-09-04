@@ -12,7 +12,6 @@
       %span#duration_label Duration (optional):
 
       #form_partial_wrapper
-
         - for recipe_ingredient in @recipe_ingredients do
           = recipe_form.fields_for :recipe_ingredients, recipe_ingredient do | recipe_ingredients_form |
             %span.form_count
